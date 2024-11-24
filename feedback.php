@@ -338,6 +338,7 @@
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
         <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
         <li class="nav-item"><a href="feedback.php" class="nav-link">FeedBack</a></li>
+        <li class="nav-item"><a href="powerpoint.html" class="nav-link">Presentions</a></li>
       </ul>
       <div class="d-flex flex-column flex-sm-row justify-content-center">
         <a href="https://bit.ly/codeconnect2" class="btn btn-primary shadow-primary btn-lg me-sm-4 mb-3">Register Now
