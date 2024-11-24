@@ -136,11 +136,11 @@
 
   <!-- Page loading scripts -->
   <script>
-    (function () {
-      window.onload = function () {
+    (function() {
+      window.onload = function() {
         const preloader = document.querySelector('.page-loading');
         preloader.classList.remove('active');
-        setTimeout(function () {
+        setTimeout(function() {
           preloader.remove();
         }, 1000);
       };
@@ -253,7 +253,7 @@
               <div class="bg-dark position-absolute top-0 start-0 w-100 h-100 rounded-3 d-none d-dark-mode-block"></div>
               <div class="card-body position-relative zindex-2">
                 <h2 class="card-title pb-3 mb-4">Let us know what you think</h2>
-                <form method="post" action="form.php" class="row g-4 needs-validation" novalidate>
+                <form method="post" action="" class="row g-4 needs-validation" novalidate>
                   <div class="col-12">
                     <label for="fn" class="form-label fs-base">Full name</label>
                     <input type="text" class="form-control form-control-lg" id="fn" name="fullname" required>
@@ -337,7 +337,7 @@
         <li class="nav-item"><a href="#schedule" class="nav-link">Schedule</a></li>
         <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
         <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
-        <li class="nav-item"><a href="feedback.html" class="nav-link">FeedBack</a></li>
+        <li class="nav-item"><a href="feedback.php" class="nav-link">FeedBack</a></li>
       </ul>
       <div class="d-flex flex-column flex-sm-row justify-content-center">
         <a href="https://bit.ly/codeconnect2" class="btn btn-primary shadow-primary btn-lg me-sm-4 mb-3">Register Now
@@ -349,20 +349,6 @@
           Add to calendar
         </a>
       </div>
-      <!-- <div class="d-flex justify-content-center pt-4 mt-lg-3">
-          <a href="#" class="btn btn-icon btn-secondary btn-facebook mx-2">
-            <i class="bx bxl-facebook"></i>
-          </a>
-          <a href="#" class="btn btn-icon btn-secondary btn-instagram mx-2">
-            <i class="bx bxl-instagram"></i>
-          </a>
-          <a href="#" class="btn btn-icon btn-secondary btn-twitter mx-2">
-            <i class="bx bxl-twitter"></i>
-          </a>
-         <a href="#" class="btn btn-icon btn-secondary btn-youtube mx-2">
-            <i class="bx bxl-youtube"></i>
-          </a>
-        </div> -->
       <p class="nav d-block fs-sm text-center pt-5 mt-lg-4 mb-0">
         <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
         <a class="nav-link d-inline-block p-0" href="https://coding-hq.com/" target="_blank" rel="noopener">CodingHQ</a>
@@ -388,3 +374,29 @@
 </body>
 
 </html>
+
+
+
+<?php
+$conn = new mysqli('localhost', 'root', '', 'feedback');
+
+if ($conn->error) {
+  # code...
+  echo "db connect failed" . $conn->error;
+}
+
+// insert into db
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  # code...
+  $fullname = $conn->real_escape_string($_POST['fullname']);
+  $email = $conn->real_escape_string($_POST['email']);
+  $phonenumber = $conn->real_escape_string($_POST['phonenumber']);
+  $feedback = $conn->real_escape_string($_POST['feedback']);
+
+  $stmt = $conn->prepare("INSERT INTO feedback (fullname, email, phonenumber, feedback) VALUES (?, ?, ?, ?)");
+  $stmt->bind_param('ssss', $fullname, $email, $phonenumber, $feedback);
+  $stmt->execute();
+  $stmt->close();
+  echo "<script>alert('Your feedback was successfully recorded. Thank you');</script>";
+}
+?>
