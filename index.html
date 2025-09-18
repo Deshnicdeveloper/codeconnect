@@ -39,7 +39,7 @@
                     <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sponsors">Sponsors</a></li>
-                    <li class="nav-item ms-lg-2"><a class="btn btn-cta" href="https://forms.gle/your-google-form"
+                    <li class="nav-item ms-lg-2"><a class="btn btn-cta" href="https://forms.gle/1Eaf5r8NTrxAQrWv9"
                             target="_blank" rel="noopener">Register</a></li>
                 </ul>
             </div>
@@ -287,7 +287,7 @@
                             <li>Exhibition floor & networking</li>
                             <li>Digital swag & session recordings</li>
                         </ul>
-                        <a href="hhttps://forms.gle/1Eaf5r8NTrxAQrWv9" class="btn btn-cta w-100" target="_blank"
+                        <a href="https://forms.gle/1Eaf5r8NTrxAQrWv9" class="btn btn-cta w-100" target="_blank"
                             rel="noopener">Register now</a>
                     </div>
                 </div>
