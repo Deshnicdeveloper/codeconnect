@@ -2,1172 +2,1426 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>CodeConnect by CodingHQ</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodeConnect 2025 – Engineering Cameroon's Digital Future</title>
+    <meta name="description"
+        content="CodeConnect 2025 – Engineering Cameroon's Digital Future. November 29, 2025 at Krystal Palace, Douala. Join developers, founders, investors, and policy leaders for keynotes, panels, exhibitions, and networking." />
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="CodeConnect is an annual tech conference that serves as a platform to inspire,
-educate, and connect both aspiring and successful software engineers">
-  <meta name="keywords"
-    content="codeconnect2, codinghq, tech conference, Douala, douala conference, tech submit in douala">
-  <meta name="author" content="CodingHQ">
-
-  <!-- Viewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Favicon and Touch Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/codingHQ_small.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/codingHQ_small.png">
-  <link rel="manifest" href="assets/favicon/site.webmanifest">
-  <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
-  <link rel="shortcut icon" href="assets/favicon/codingHQ_small.png">
-  <meta name="msapplication-TileColor" content="#080032">
-  <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
-  <meta name="theme-color" content="#ffffff">
-
-  <!-- Vendor Styles -->
-  <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css" />
-  <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css" />
-
-  <!-- Main Theme Styles + Bootstrap -->
-  <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
-
-  <!-- Page loading styles -->
-  <style>
-    .page-loading {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      -webkit-transition: all .4s .2s ease-in-out;
-      transition: all .4s .2s ease-in-out;
-      background-color: #fff;
-      opacity: 0;
-      visibility: hidden;
-      z-index: 9999;
-    }
-
-    .dark-mode .page-loading {
-      background-color: #0b0f19;
-    }
-
-    .page-loading.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .page-loading-inner {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-      -webkit-transition: opacity .2s ease-in-out;
-      transition: opacity .2s ease-in-out;
-      opacity: 0;
-    }
-
-    .page-loading.active>.page-loading-inner {
-      opacity: 1;
-    }
-
-    .page-loading-inner>span {
-      display: block;
-      font-size: 1rem;
-      font-weight: normal;
-      color: #9397ad;
-    }
-
-    .dark-mode .page-loading-inner>span {
-      color: #fff;
-      opacity: .6;
-    }
-
-    .page-spinner {
-      display: inline-block;
-      width: 2.75rem;
-      height: 2.75rem;
-      margin-bottom: .75rem;
-      vertical-align: text-bottom;
-      border: .15em solid #b4b7c9;
-      border-right-color: transparent;
-      border-radius: 50%;
-      -webkit-animation: spinner .75s linear infinite;
-      animation: spinner .75s linear infinite;
-    }
-
-    .dark-mode .page-spinner {
-      border-color: rgba(255, 255, 255, .4);
-      border-right-color: transparent;
-    }
-
-    @-webkit-keyframes spinner {
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes spinner {
-      100% {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-      }
-    }
-  </style>
-
-  <!-- Theme mode -->
-  <script>
-    let mode = window.localStorage.getItem('mode'),
-      root = document.getElementsByTagName('html')[0];
-    if (mode !== null && mode === 'dark') {
-      root.classList.add('dark-mode');
-    } else {
-      root.classList.remove('dark-mode');
-    }
-  </script>
-
-  <!-- Page loading scripts -->
-  <script>
-    (function () {
-      window.onload = function () {
-        const preloader = document.querySelector('.page-loading');
-        preloader.classList.remove('active');
-        setTimeout(function () {
-          preloader.remove();
-        }, 1000);
-      };
-    })();
-  </script>
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="shortcut icon" href="assets/img/favicon.PNG" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-
-<!-- Body -->
-
 <body>
-
-  <!-- Page loading spinner -->
-  <div class="page-loading active">
-    <div class="page-loading-inner">
-      <div class="page-spinner"></div><span>Let's connect...</span>
-    </div>
-  </div>
-
-
-  <!-- Page wrapper for sticky footer -->
-  <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
-  <main class="page-wrapper">
-
-
-    <!-- Navbar -->
-    <!-- Remove "fixed-top" class to make navigation bar scrollable with the page -->
-    <header class="header navbar navbar-expand-lg bg-light shadow-sm fixed-top">
-      <div class="container px-3">
-        <a href="index.html" class="navbar-brand pe-3">
-          CodeConnect
-        </a>
-        <div id="navbarNav" class="offcanvas offcanvas-end">
-          <div class="offcanvas-header border-bottom">
-            <h5 class="offcanvas-title">Menu</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-
-          <!-- Here is the Navbar  -->
-          <div class="offcanvas-body">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a href="feedback/" class="nav-link">FeedBack</a>
-              </li>
-              <li class="nav-item">
-                <a href="presentation/" class="nav-link">Presentations</a>
-              </li>
-            </ul>
-          </div>
-          <div class="offcanvas-header border-top">
-            <a href="https://bit.ly/codeconnect2" class="btn btn-primary w-100" target="_blank" rel="noopener">
-              <i class=" fs-4 lh-1 me-1"></i>
-              &nbsp;Register now
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+                <!-- <span class="d-inline-flex align-items-center justify-content-center"
+                    style="width:34px;height:24px;border-radius:6px;background:var(--cc-orange)"></span>
+                <span>CodeConnect 2025</span> -->
+                <img src="assets/img/longC.PNG" class="img-fluid" style="width: 200px;" alt="CodeConnect 2025">
             </a>
-          </div>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+                data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+            <div id="nav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#agenda">Agenda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sponsors">Sponsors</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-cta" href="https://forms.gle/your-google-form"
+                            target="_blank" rel="noopener">Register</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="form-check form-switch mode-switch pe-lg-1 ms-auto me-4" data-bs-toggle="mode">
-          <input type="checkbox" class="form-check-input" id="theme-mode">
-          <label class="form-check-label d-none d-sm-block" for="theme-mode">Light</label>
-          <label class="form-check-label d-none d-sm-block" for="theme-mode">Dark</label>
+    </nav>
+
+    <!-- HERO -->
+    <header id="top" class="hero" style="margin-top: 3rem;">
+        <div class="hero-circles"></div>
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7">
+                    
+                    <h1 class="hero-title mb-3">Engineering Cameroon’s <span class="accent">Digital Future</span></h1>
+                    <p class="hero-sub mb-4">One day. One city. One community. 200+ builders, founders, investors and
+                        policy leaders under one roof to ship ideas, share hard-won lessons, and build what’s next.</p>
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <span class="pill"><i class="bi bi-calendar-event"></i> 29 Nov 2025</span>
+                        <span class="pill"><i class="bi bi-geo-alt"></i> Krystal Palace, Douala</span>
+                        <span class="pill"><i class="bi bi-ticket-perforated"></i> Free Registration</span>
+                    </div>
+                    <div class="mt-4 d-flex gap-3">
+                        <a class="btn btn-cta btn-lg" href="https://forms.gle/1Eaf5r8NTrxAQrWv9" target="_blank"
+                            rel="noopener">Save your seat</a>
+                        <a class="btn btn-outline-light btn-lg" href="#agenda">See agenda</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="bg-stripe p-4 rounded-4 shadow">
+                        <h5 class="mb-3 fw-bold">What’s happening</h5>
+                        <ul class="mb-0">
+                            <li>Keynote talks by industry leaders</li>
+                            <li>Three expert-led panel discussions</li>
+                            <li>Exhibitor demos & startup showcases</li>
+                            <li>Networking with tech professionals & recruiters</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <div class="countdown-card">
+                            <div class="countdown-wrapper">
+                                <div class="countdown-item">
+                                    <span id="countdown-days" class="countdown-value">00</span>
+                                    <span class="countdown-label">Days</span>
+                                </div>
+                                <div class="countdown-divider">:</div>
+                                <div class="countdown-item">
+                                    <span id="countdown-hours" class="countdown-value">00</span>
+                                    <span class="countdown-label">Hours</span>
+                                </div>
+                                <div class="countdown-divider">:</div>
+                                <div class="countdown-item">
+                                    <span id="countdown-minutes" class="countdown-value">00</span>
+                                    <span class="countdown-label">Minutes</span>
+                                </div>
+                                <div class="countdown-divider">:</div>
+                                <div class="countdown-item">
+                                    <span id="countdown-seconds" class="countdown-value">00</span>
+                                    <span class="countdown-label">Seconds</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <a href="https://bit.ly/codeconnect2" class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex"
-          target="_blank" rel="noopener">
-          <i class=" fs-5 lh-1 me-1"></i>
-          Register now
-        </a>
-      </div>
     </header>
 
+    <style>
+        .countdown-card {
+            background: linear-gradient(90deg, 
+                rgba(244, 106, 31, 0.1), 
+                rgba(39, 111, 191, 0.1)
+            );
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 3rem;
+            backdrop-filter: blur(10px);
+        }
 
-    <!-- Video + Title split section -->
-    <section class="container-fluid position-relative px-0 pt-5 mt-3 mt-lg-4">
-      <div class="row g-0">
-        <div class="col-xl-7 col-lg-6 pe-lg-5">
-          <div class="d-flex h-100 pe-xl-4">
-            <video class="w-100" autoplay muted loop style="object-fit: cover;">
-              <source src="assets/img/landing/conference/hero-video.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-6 position-relative py-5">
-          <img src="assets/img/landing/conference/hero-bg.png"
-            class="position-absolute top-50 translate-middle-y ms-lg-n4" width="866" alt="Background shapes">
-          <div
-            class="position-relative zindex-5 text-center text-lg-start px-3 px-lg-0 py-xl-4 py-xxl-5 mt-lg-3 mx-auto mx-lg-0"
-            style="max-width: 530px;">
-            <h2 class="h3 text-primary">Nov 23, 2024</h2>
-            <h1 class="display-1 pb-lg-3 mb-3">CodeConnect Conference</h1>
-            <div class="d-flex justify-content-center justify-content-lg-start text-start mb-2">
-              <i class="bx bx-map fs-4 text-primary me-2"></i>
-              <div class="fs-xl">Hotel Prince De Galles,<br>Akwa, Douala</div>
-            </div>
-            <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start py-4 py-lg-5">
-              <a href="https://www.bit.ly/codeconnect2" target="_blank"
-                class="btn btn-primary shadow-primary btn-lg me-sm-3 me-xl-4 mb-3">Register
-                Now</a>
-              <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=CodeConnect&dates=20241123T090000Z/20241123T160000Z&details=Beyond the code&location=Hotel Prince De Galles"
-                target="
-                _blank" class="btn btn-outline-primary btn-lg mb-3">
-                <i class="bx bx-calendar-check fs-xl me-2 ms-n1"></i>
-                Add to calendar
-              </a>
-            </div>
-            <div
-              class="d-flex align-items-center justify-content-center justify-content-lg-start text-start pb-2 pt-lg-2 pb-xl-0 pt-xl-5 mt-xxl-5">
-              <div class="d-flex me-3">
-                <div class="d-flex align-items-center justify-content-center bg-light rounded-circle"
-                  style="width: 52px; height: 52px;">
-                  <img src="assets/img/team/Samuel.jpg" class="rounded-circle" width="48" alt="Avatar">
-                </div>
-                <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3"
-                  style="width: 52px; height: 52px;">
-                  <img src="assets/img/team/daniel.png" class="rounded-circle" width="48" alt="Avatar">
-                </div>
-                <div class="d-flex align-items-center justify-content-center bg-light rounded-circle ms-n3"
-                  style="width: 52px; height: 52px;">
-                  <img src="assets/img/team/yannick.jpg" class="rounded-circle" width="48" alt="Avatar">
-                </div>
-              </div>
-              <span class="fs-sm"><span class="text-primary fw-semibold">200+</span> attendees are already with
-                us</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="position-absolute d-none d-lg-block bottom-0 start-0 w-100 zindex-5 pb-xxl-5">
-        <div class="container pb-4 mb-3 mb-xxl-0">
-          <a href="#speakers" class="d-table text-light opacity-80 text-decoration-none w-auto py-4" data-scroll
-            data-scroll-offset="70">
-            <span class="d-flex align-items-center">
-              Scroll for more
-              <i class="bx bx-down-arrow-circle fs-3 ms-2"></i>
-            </span>
-          </a>
-        </div>
-      </div>
-    </section>
+        .countdown-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
 
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 100px;
+        }
 
-    <!-- Sponsors -->
-    <section id="sponsors" class="position-relative bg-dark py-5">
-      <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255,255,255,.05);"></div>
-      <div class="container position-relative zindex-5 pt-1 pt-md-2 pb-lg-2 pt-lg-4">
-        <h2 class="h3 text-light text-center text-lg-start mb-4 mb-lg-5">Sponsored by:</h2>
-        <div class="swiper ms-xxl-n5 me-xxl-n4" data-swiper-options='{
-            "slidesPerView": 2,
-            "spaceBetween": 24,
-            "pagination": {
-              "el": ".swiper-pagination",
-              "clickable": true
-            },
-            "breakpoints": {
-              "500": {
-                "slidesPerView": 3
-              },
-              "650": {
-                "slidesPerView": 4
-              },
-              "900": {
-                "slidesPerView": 5
-              },
-              "1100": {
-                "slidesPerView": 6
-              }
+        .countdown-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--cc-blue-light);
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 20px rgba(108, 180, 228, 0.3);
+        }
+
+        .countdown-label {
+            color: var(--cc-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .countdown-divider {
+            font-size: 2.5rem;
+            font-weight: 200;
+            color: var(--cc-muted);
+            margin-top: -1rem;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-wrapper {
+                gap: 0.5rem;
             }
-          }'>
-          <div class="swiper-wrapper">
 
-            <!-- Item -->
-            <div class="swiper-slide">
-              <a href="#" class="d-block py-3">
-                <img src="assets/img/brands/effex.png" class="d-block mx-auto" width="124" alt="effex">
-              </a>
-            </div>
+            .countdown-item {
+                min-width: 70px;
+            }
 
-            <!-- Item -->
-            <div class="swiper-slide">
-              <a href="#" class="d-block py-3">
-                <img src="assets/img/brands/icreate.png" class="d-block mx-auto" width="124" alt="icreate">
-              </a>
-            </div>
+            .countdown-value {
+                font-size: 2rem;
+            }
 
-            <!-- Item -->
-            <div class="swiper-slide">
-              <a href="#" class="d-block py-3">
-                <img src="assets/img/brands/goldlinks.png" style="color: white;" class="d-block mx-auto" width="124"
-                  alt="goldlinks">
-              </a>
-            </div>
+            .countdown-label {
+                font-size: 0.8rem;
+            }
 
-            <!-- Item -->
-            <div class="swiper-slide">
-              <a href="#" class="d-block py-3">
-                <img src="assets/img/brands/gitwit.png" class="d-block mx-auto" width="124" alt="gitwit">
-              </a>
-            </div>
+            .countdown-divider {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 
-            <!-- Item -->
-            <div class="swiper-slide">
-              <a href="#" class="d-block py-3">
-                <img src="assets/img/brands/CSC_Full logo.png" class="d-block mx-auto" width="124"
-                  alt="cameroon software company">
-              </a>
-            </div>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('November 29, 2025 00:00:00').getTime();
+            
+            function update() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
 
-            <!-- Item -->
-            <div class="swiper-slide">
-              <a href="https://sesa-tech.com" class="d-block py-3">
-                <img src="assets/img/brands/sesa.png" class="d-block mx-auto" width="124" alt="sesa tech">
-              </a>
-            </div>
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            <!-- Item -->
-            <div class="swiper-slide">
-              <a href="https://coding-hq.com" class="d-block py-3">
-                <img src="assets/img/brands/codingHQ_long_logo.png" class="d-block mx-auto" width="124" alt="codinghq">
-              </a>
-            </div>
-          </div>
+                document.getElementById('countdown-days').textContent = String(days).padStart(2, '0');
+                document.getElementById('countdown-hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('countdown-minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('countdown-seconds').textContent = String(seconds).padStart(2, '0');
 
-          <!-- Pagination (bullets) -->
-          <div class="swiper-pagination position-relative pt-2 mt-4"></div>
-        </div>
-      </div>
-    </section>
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.querySelectorAll('.countdown-value').forEach(el => {
+                        el.textContent = '00';
+                    });
+                }
+            }
 
+            update(); // Initial update
+            const countdownInterval = setInterval(update, 1000);
+        }
 
-    <!-- Speakers -->
-    <section id="speakers" class="container py-5 my-2 my-md-4 my-lg-5">
-      <div class="d-md-flex align-items-center justify-content-between text-center text-md-start pt-md-1 pt-lg-3">
-        <h2 class="h1 mb-4 mb-md-0 me-md-3">World-Class Speakers</h2>
-      </div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mt-2 mt-lg-4">
+        // Initialize countdown when document is ready
+        document.addEventListener('DOMContentLoaded', updateCountdown);
+    </script>
 
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/derek.jpg" class="rounded-3" alt="Agendi Derek">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-
-                  <a href="https://www.linkedin.com/in/derekagendia/"
-                    class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title mb-3">CodeConnect is where dreamers become builders</h2>
+                    <p class="section-lead">CodeConnect 2025 brings together developers, founders, product leaders,
+                        investors and policymakers for one high‑energy day of learning, showcasing, and deal‑making.
+                        Expect deep, practical conversations and a no‑fluff agenda built around Cameroon’s most pressing
+                        digital opportunities.</p>
                 </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">Agendia Derek</h3>
-              <p class="fs-sm mb-0">UI/UX Designer, Icreate</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/daniel.png" class="rounded-3" alt="Nghokeng Daniel">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-
-                  <a href="https://www.linkedin.com/in/nghokeng-daniel-st%C3%A9phane-860340172/"
-                    class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">Nghokeng Daniel</h3>
-              <p class="fs-sm mb-0">Senior Software Engineer, CSC</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/steve.jpg" class="rounded-3" alt="Fasseu Steve">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-
-                  <a href="https://www.linkedin.com/in/steve-fasseu/"
-                    class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">Steve Fasseu</h3>
-              <p class="fs-sm mb-0">Senior Software Engineer</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/collins.png" class="rounded-3" alt="Collins Ngwashi">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-
-                  <a href="https://www.linkedin.com/in/collins-ngwashi-682193152/"
-                    class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">Collins Ngwashi</h3>
-              <p class="fs-sm mb-0">Managing Director, Effex Studios</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/Samuel.jpg" class="rounded-3" alt="Samuel Bakon">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-
-                  <a href="https://www.linkedin.com/in/samuel-bakon-gl/"
-                    class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">Samuel Bakon</h3>
-              <p class="fs-sm mb-0">Senior Software Engineer</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/sandra.jpg" class="rounded-3" alt="AK Sandra">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-                  <a href="https://www.facebook.com/ak.sandra.940/" class="btn btn-icon btn-secondary btn-facebook btn-sm bg-white me-2">
-                    <i class="bx bxl-facebook"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">AK Sandra</h3>
-              <p class="fs-sm mb-0">Frontend Developer, GoldLinks Digital</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/yannick.jpg" class="rounded-3" alt="Yannick Nde">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-
-                  <a href="https://www.linkedin.com/in/yanicknde/"
-                    class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">Yannick Nde</h3>
-              <p class="fs-sm mb-0">Senior Software Engineer</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/merime.jpg" class="rounded-3" alt="YMérimé Ngouabo">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-
-                  <a href="https://www.linkedin.com/in/m%C3%A9rim%C3%A9-ngouabo-pesijo-479923b8/"
-                    class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">Mérimé Ngouabo</h3>
-              <p class="fs-sm mb-0">Avocat Stagiaire au barreau du Cameroun</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item -->
-        <div class="col">
-          <div class="card card-hover border-0 bg-transparent">
-            <div class="position-relative">
-              <img src="assets/img/team/cedric.jpg" class="rounded-3" alt="Cédric Djomaleu">
-              <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
-                <div class="position-relative d-flex zindex-2">
-
-                  <a href="https://www.linkedin.com/in/c%C3%A9dric-djomaleu-738131143/"
-                    class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2">
-                    <i class="bx bxl-linkedin"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="card-body text-center p-3">
-              <h3 class="fs-lg fw-semibold pt-1 mb-2">Cédric Djomaleu</h3>
-              <p class="fs-sm mb-0">Coach formateur en Art Oratoire, Leadership Academy</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Tickets and About -->
-    <section id="about" class="container pb-5 mb-2 mb-md-4 mb-lg-5 mt-n3 mt-lg-0">
-      <div class="row pt-xl-2 pb-md-3">
-        <div class="col-lg-5 mb-4 mb-lg-0">
-          <h2 class="h1 text-center text-sm-start mb-4">Welcome to the greatest Tech Conference in Cameroon</h2>
-          <p class="pb-2 pb-lg-4 pb-xl-5 mb-3">CodeConnect is an annual tech conference that serves as a platform to
-            inspire,
-            educate, and connect both aspiring and successful software engineers. Launched
-            in 2024, CodeConnect aims to provide valuable insights into the
-            tech industry, emphasizing on the broader
-            aspects of a tech career, including branding, project management,
-            and career progression.</p>
-          <h3 class="text-center text-sm-start mb-4">Ticket Prices</h3>
-
-          <!-- Pricing -->
-          <ul class="list-group">
-            <li class="list-group-item d-flex flex-column flex-sm-row align-items-center justify-content-between p-4">
-              <div class="d-flex align-items-center">
-                <svg class="flex-shrink-0 me-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M23.794 1.71278C23.5195 1.43819 23.0743 1.43819 22.7997 1.71278L21.4284 3.08406C20.6078 2.1197 19.3859 1.50686 18.0235 1.50686C16.8653 1.50686 15.7764 1.95789 14.9577 2.77675L0.205961 17.5284C0.00486702 17.7295 -0.0552736 18.0319 0.0535233 18.2947C0.162367 18.5574 0.418726 18.7287 0.703117 18.7287H9.44934L11.8087 21.0881H11.2469C10.8585 21.0881 10.5437 21.4029 10.5437 21.7912C10.5437 22.1795 10.8585 22.4943 11.2469 22.4943H15.7656C16.1539 22.4943 16.4687 22.1795 16.4687 21.7912C16.4687 21.4029 16.1539 21.0881 15.7656 21.0881H13.7975L11.4381 18.7287H14.2594C18.7998 18.7287 22.4937 15.0348 22.4937 10.4943V5.97709C22.4937 5.39355 22.3812 4.83578 22.1769 4.32428L23.794 2.70714C24.0687 2.43255 24.0687 1.98737 23.794 1.71278ZM2.4006 17.3224L13.5562 6.1668V8.98806C13.5562 13.5836 9.81745 17.3224 5.22187 17.3224H2.4006ZM21.0875 10.4943C21.0875 14.2594 18.0244 17.3225 14.2594 17.3225H10.2592C13.0761 15.6134 14.9625 12.5168 14.9625 8.98811V6.15995C14.9625 5.25752 15.3139 4.40913 15.952 3.77116C16.5052 3.21784 17.2409 2.91316 18.0235 2.91316C19.713 2.91316 21.0875 4.28767 21.0875 5.97719L21.0875 10.4943Z"
-                    fill="currentColor" />
-                  <path
-                    d="M18.7781 5.97526C19.1664 5.97526 19.4812 5.66046 19.4812 5.27213C19.4812 4.88381 19.1664 4.56901 18.7781 4.56901C18.3898 4.56901 18.075 4.88381 18.075 5.27213C18.075 5.66046 18.3898 5.97526 18.7781 5.97526Z"
-                    fill="currentColor" />
-                </svg>
-                <h4 class="fs-base fw-semibold text-nowrap ps-1 mb-0">Early birds</h4>
-              </div>
-              <h5 class="text-primary my-2 my-sm-0">Free</h5>
-              <div class="fs-sm">until Nov 20, 2024</div>
-            </li>
-            <li class="list-group-item d-flex flex-column flex-sm-row align-items-center justify-content-between p-4">
-              <div class="d-flex align-items-center">
-                <svg class="flex-shrink-0 me-2" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M18.0225 2.91133C17.2397 2.91133 16.5038 3.21602 15.9507 3.76914C15.3132 4.40664 14.9616 5.25508 14.9616 6.15977V8.98633C14.9616 12.516 13.0772 15.6098 10.26 17.3207H14.2585C18.0225 17.3207 21.0882 14.2598 21.0882 10.491V5.97227C21.0882 4.28945 19.71 2.91133 18.0225 2.91133ZM18.7772 5.97695C18.3882 5.97695 18.0741 5.66289 18.0741 5.27383C18.0741 4.88477 18.3882 4.5707 18.7772 4.5707C19.1663 4.5707 19.4804 4.88477 19.4804 5.27383C19.4804 5.66289 19.1663 5.97695 18.7772 5.97695ZM23.7929 1.71133C23.5163 1.43477 23.071 1.43477 22.7991 1.71133L21.4257 3.08477C20.6054 2.11914 19.3819 1.50977 18.0225 1.50977C16.8647 1.50977 15.7772 1.95977 14.9569 2.78008L0.20535 17.527C0.00378752 17.7285 -0.05715 18.0285 0.0506625 18.291C0.158475 18.5535 0.416288 18.727 0.702225 18.727H5.22097H9.4491L11.8069 21.0848H11.2444C10.8553 21.0848 10.5413 21.3988 10.5413 21.7879C10.5413 22.177 10.8553 22.491 11.2444 22.491H15.7632C16.1522 22.491 16.4663 22.177 16.4663 21.7879C16.4663 21.3988 16.1522 21.0848 15.7632 21.0848H13.7944L11.4366 18.727H14.2585C18.8007 18.727 22.4944 15.0332 22.4944 10.491V5.97227C22.4944 5.39102 22.3819 4.8332 22.1757 4.31758L23.7929 2.70039C24.0694 2.4332 24.0694 1.98789 23.7929 1.71133ZM2.3991 17.3207L13.5554 6.16445V8.98633C13.5554 13.5801 9.81472 17.3207 5.22097 17.3207H2.3991ZM21.0882 10.4957C21.0882 14.2598 18.0272 17.3254 14.2585 17.3254H10.26C13.0772 15.6145 14.9616 12.516 14.9616 8.98633V6.15977C14.9616 5.25508 15.3132 4.40664 15.9507 3.76914C16.5038 3.21602 17.2397 2.91133 18.0225 2.91133C19.71 2.91133 21.0882 4.28477 21.0882 5.97695V10.4957Z"
-                    fill="currentColor" />
-                </svg>
-                <h4 class="fs-base fw-semibold text-nowrap ps-1 mb-0">Late birds</h4>
-              </div>
-              <h5 class="badge bg-primary fs-5 fw-bold rounded px-3 py-0 my-3 my-sm-0">xaf 5000</h5>
-              <div class="fs-sm">after Nov 20, 2024</div>
-            </li>
-          </ul>
-        </div>
-        <div class="col-xl-6 col-lg-7 offset-xl-1 position-relative">
-
-          <!-- Ticket card -->
-          <div class="position-relative">
-            <div class="position-relative overflow-hidden bg-gradient-primary rounded-3 zindex-5 py-5 px-4 p-sm-5">
-              <span class="position-absolute top-50 start-0 translate-middle bg-light rounded-circle p-4"></span>
-              <span class="position-absolute top-0 start-0 w-100 h-100 bg-repeat-0 bg-position-center-end bg-size-cover"
-                style="background-image: url(assets/img/landing/conference/price-card-pattern.png);"></span>
-              <div class="px-md-4 position-relative zindex-5">
-                <div class="d-sm-flex align-items-start justify-content-between">
-                  <div class="text-center text-sm-start me-sm-4">
-                    <div class="lead fw-semibold text-light text-uppercase mb-2">Nov 23</div>
-                    <h3 class="h1 text-light">Beyond The Code</h3>
-                  </div>
-                  <div class="d-table bg-white rounded-3 p-4 flex-shrink-0 mx-auto mx-sm-0">
-                    <img src="assets/img/landing/conference/bit.ly_m_codinghq.png" width="132" alt="QR Code">
-                  </div>
-                </div>
-                <div class="d-flex flex-column flex-sm-row align-items-center pt-4 mt-2">
-                  <a href="https://bit/ly/codeconnect2" class="btn btn-light btn-lg mb-3 mb-sm-0 me-sm-3">Register
-                    Now</a>
-                  <div class="d-flex align-items-center">
-                    <span class="fs-lg text-light me-2">for free</span>
-                  </div>
-                </div>
-              </div>
-              <span class="position-absolute top-50 end-0 translate-middle-y bg-light rounded-circle p-4 me-n4"></span>
-            </div>
-            <span class="position-absolute bg-gradient-primary opacity-60 bottom-0 mb-n2 d-dark-mode-none"
-              style="left: 1.5rem; width: calc(100% - 3rem); height: 5rem; filter: blur(.625rem);"></span>
-          </div>
-
-          <!-- Arrow -->
-          <div class="position-absolute bottom-0 text-primary d-none d-lg-block ms-xl-n5 mb-lg-5 mb-xl-4 pb-3">
-            <div class="ms-xl-n4">
-              <svg width="95" height="100" viewBox="0 0 95 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M78.8361 25.0939C91.1514 40.6379 81.8802 63.3086 61.7212 64.3539C60.7119 64.447 59.5832 64.3477 58.6105 64.2848C58.7669 50.9978 52.4534 36.5276 41.6324 32.847C31.8669 29.5776 26.5235 39.0204 30.5663 47.0383C35.4083 56.5589 43.9198 64.4699 54.2628 67.3808C53.4517 75.7446 49.4008 83.1867 40.4191 85.693C25.2817 89.8859 9.48935 75.832 7.25928 61.4938C7.12064 59.981 4.79 60.0942 4.92864 61.607C5.83171 80.8987 28.9103 96.1621 46.7792 87.3441C53.6867 83.8595 57.3887 76.5003 58.3558 68.173C69.2212 69.5612 79.5859 63.2659 85.1681 54.2081C91.5844 43.7002 88.5763 31.9764 81.257 23.1926C80.1091 21.7727 77.8441 23.7109 78.8361 25.0939ZM39.1221 52.6568C36.2753 49.3596 33.1435 45.1733 32.7276 40.635C32.275 36.2527 38.2211 36.1619 40.7539 36.5897C43.9108 37.163 46.2067 40.0025 47.9151 42.5401C51.7632 47.8805 54.3289 55.8821 54.5172 63.4926C48.5423 61.6026 43.3094 57.2542 39.1221 52.6568Z"
-                  fill="currentColor" />
-                <path
-                  d="M75.1096 15.0312C74.0848 19.3973 73.3354 23.9923 73.4392 28.4577C73.5047 30.2821 76.0279 30.0497 76.1186 28.2613C76.2997 24.6849 77.2976 21.1349 78.2588 17.7408C80.2501 18.3708 82.3978 19.0372 84.3528 19.8231C85.8397 20.4997 87.9238 22.1382 89.7035 21.5672C90.5937 21.2818 90.7767 20.5022 90.6474 19.6495C90.3065 17.596 87.0302 16.8302 85.3872 16.1172C82.6885 14.993 80.073 14.2174 77.2645 13.561C76.3289 13.3423 75.3292 14.0956 75.1096 15.0312Z"
-                  fill="currentColor" />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Highlights (Video showreel) -->
-
-
-    <!-- Schedule -->
-    <section class="container py-5" id="schedule">
-      <div class="row mt-xl-2 mb-xl-3 pb-3 py-md-4 py-lg-5">
-        <div class="col-12">
-          <h2 class="h1 text-center text-sm-start pb-2 pb-lg-0 mb-4 mb-lg-5">Schedule</h2>
-        </div>
-        <div class="col-lg-3 mb-4">
-
-          <!-- Nav tabs -->
-          <div class="nav flex-nowrap flex-lg-column nav-tabs" role="tablist" aria-orientation="vertical">
-            <a href="#day-1" class="nav-link d-block w-100 rounded-3 p-4 p-xl-5 me-2 me-sm-3 me-lg-0 mb-lg-3 active"
-              id="day-1-tab" data-bs-toggle="tab" role="tab" aria-controls="day-1" aria-selected="true">
-              <div class="fs-xl">Event Day</div>
-              <div class="fs-3 fw-bold">Nov 23, 2024</div>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-8 offset-lg-1">
-
-          <!-- Tab panes -->
-          <div class="tab-content">
-
-            <!-- Day 1 schedule -->
-            <div class="tab-pane fade show active" id="day-1" role="tabpanel" aria-labelledby="day-1-tab">
-              <div class="border-bottom pb-4">
-                <div class="row pb-1 pb-xl-3">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="h5 mb-1">9:30 – 10:30 am</div>
-                    <p class="text-muted mb-0">November 23rd</p>
-                  </div>
-                  <div class="col-sm-8">
-                    <h5 class="mb-0">Opening party &amp; early registration</h5>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Welcome talk  -->
-              <div class="border-bottom py-4">
-                <div class="row py-1 py-xl-3">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="h5 mb-1">10:45 – 11:00 am</div>
-                    <span class="badge bg-warning shadow-warning fs-sm">Welcome Talk</span>
-                  </div>
-                  <div class="col-sm-8">
-                    <h5>Welcome Message</h5>
-                    <p class="mb-4">An opening talk to set the tone, welcome everyone, and
-                      introduce the theme of the event, “Beyond the Code: Crafting Your Tech
-                      Career.</p>
-                    <div class="d-flex align-items-center">
-                      <div class="ps-3">
-                        <h6 class="fw-semibold mb-1">Nkwenti Deshnic</h6>
-                        <p class="fs-sm text-muted mb-0">Coordinator, CodingHQ</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- KeyNote speach  -->
-              <div class="border-bottom py-4">
-                <div class="row py-1 py-xl-3">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="h5 mb-1">10:45 – 11:00 am</div>
-                    <span class="badge bg-warning shadow-warning fs-sm">Keynote Speech</span>
-                  </div>
-                  <div class="col-sm-8">
-                    <h5>The Future of Tech Careers</h5>
-                    <p class="mb-4">An inspiring talk focused on the tech journey and the
-                      importance of skill-building and self-confidence, aligning with the conference
-                      theme.</p>
-                    <div class="d-flex align-items-center">
-                      <img src="assets/img/team/yannick.jpg" class="" width="50" height="50" alt="Yannick Nde">
-                      <div class="ps-3">
-                        <h6 class="fw-semibold mb-1">Yannick Nde</h6>
-                        <p class="fs-sm text-muted mb-0">Senoir Software Engineer</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="border-bottom py-4">
-                <div class="row py-1 py-xl-3">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="h5 mb-1">11:20 am – 12:10 pm</div>
-                    <span class="badge bg-success shadow-success fs-sm">Workshop</span>
-                  </div>
-                  <div class="col-sm-8">
-                    <h5>Panel Discussion</h5>
-                    <p class="mb-4">Topics for aspiring developers, such as foundational skills, career
-                      paths, and tips for breaking into the industry.</p>
-                    <div class="row row-cols-1 row-cols-md-2 g-3">
-                      <div class="col">
-                        <div class="d-flex align-items-center">
-                          <img src="assets/img/team/daniel.png" class="" width="48" alt="Nghokeng Daniel">
-                          <div class="ps-3">
-                            <h6 class="fw-semibold mb-1">Nghokeng Daniel</h6>
-                            <p class="fs-sm text-muted mb-0">Myths about Software Engineering</p>
-                          </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card p-4 h-100"><span class="text-uppercase small text-muted">Focus</span>
+                                <h5 class="mt-2">Talent, Innovation & Collaboration</h5>
+                                <p class="mb-0">Panels that get tactical about launching, scaling and partnering across
+                                    our ecosystem.</p>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col">
-                        <div class="d-flex align-items-center">
-                          <img src="assets/img/team/cedric.jpg" class="" width="48" alt="Cédric Djomaleu">
-                          <div class="ps-3">
-                            <h6 class="fw-semibold mb-1">Cédric Djomaleu</h6>
-                            <p class="fs-sm text-muted mb-0">The Art of Public Speaking</p>
-                          </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card p-4 h-100"><span class="text-uppercase small text-muted">Exhibition</span>
+                                <h5 class="mt-2">Startup & Product Demos</h5>
+                                <p class="mb-0">Hands‑on booths for startups and teams to get feedback, users and
+                                    partners.</p>
+                            </div>
                         </div>
-                      </div>
-                      <div class="col">
-                        <div class="d-flex align-items-center">
-                          <img src="assets/img/team/steve.jpg" class="" width="48" alt="Steve Fasseu">
-                          <div class="ps-3">
-                            <h6 class="fw-semibold mb-1">Steve Fasseu</h6>
-                            <p class="fs-sm text-muted mb-0">The Developers RoadMap</p>
-                          </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card p-4 h-100"><span class="text-uppercase small text-muted">Community</span>
+                                <h5 class="mt-2">200+ Attendees</h5>
+                                <p class="mb-0">Curated crowd of engineers, designers, operators, founders and
+                                    decision‑makers.</p>
+                            </div>
                         </div>
-                      </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="card p-4 h-100"><span class="text-uppercase small text-muted">Access</span>
+                                <h5 class="mt-2">Free to Attend</h5>
+                                <p class="mb-0">Register early to secure your seat. Limited capacity at Krystal Palace.
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              <div class="border-bottom py-4">
-                <div class="row py-1 py-xl-3">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="h5 mb-1">12:10 – 12:30 pm</div>
-                  </div>
-                  <div class="col-sm-8">
-                    <h5 class="mb-0">Interlude: Sponsor ShowCase</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="border-bottom py-4">
-                <div class="row py-1 py-xl-3">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="h5 mb-1">12:30 – 1:15 pm</div>
-                    <span class="badge bg-warning shadow-warning fs-sm">Panel</span>
-                  </div>
-                  <div class="col-sm-8">
-                    <h5>Panel Discussion </h5>
-                    <p class="mb-4">Advanced topics such as freelancing tips, portfolio-building, client management, and
-                      career growth strategies.</p>
-                    <div class="row row-cols-1 row-cols-md-2 g-3">
-                      <div class="col">
-                        <div class="d-flex align-items-center">
-                          <img src="assets/img/team/derek.jpg" class="" width="48" alt="Agendia Derek">
-                          <div class="ps-3">
-                            <h6 class="fw-semibold mb-1">Agendia Derek</h6>
-                            <p class="fs-sm text-muted mb-0">Other Career Paths</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="d-flex align-items-center">
-                          <img src="assets/img/team/collins.png" class="" width="48" alt="Colins Ngwashi">
-                          <div class="ps-3">
-                            <h6 class="fw-semibold mb-1">Colins Ngwashi</h6>
-                            <p class="fs-sm text-muted mb-0">Personal Branding and Marketing</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="d-flex align-items-center">
-                          <img src="assets/img/team/Samuel.jpg" class="" width="48" alt="Samuel Bakon">
-                          <div class="ps-3">
-                            <h6 class="fw-semibold mb-1">Samuel Bakon</h6>
-                            <p class="fs-sm text-muted mb-0">AI as a tool for productivity</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="border-bottom py-4">
-                <div class="row py-1 py-xl-3">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="h5 mb-1">1:25 – 2:55 pm</div>
-                    <span class="badge bg-info shadow-info fs-sm">Workshop</span>
-                  </div>
-                  <div class="col-sm-8">
-                    <h5>Workshop and Skills Demo</h5>
-                    <p class="mb-4">A brief, hands-on session where attendees will engage in
-                      a mini-workshop or skills demonstration.</p>
-                    <div class="d-flex align-items-center">
-                      <img src="assets/img/team/sandra.jpg" class="" width="48" alt="AK Sandra">
-                      <div class="ps-3">
-                        <h6 class="fw-semibold mb-1">AK Sandra</h6>
-                        <p class="fs-sm text-muted mb-0">Modrator</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="pt-4">
-                <div class="row pt-1 pt-xl-3">
-                  <div class="col-sm-4 mb-3 mb-sm-0">
-                    <div class="h5 mb-1">3:00 – 4:00 pm</div>
-                  </div>
-                  <div class="col-sm-8">
-                    <h5 class="mb-0">Closing Remark, Networking and Photo Session</h5>
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <!-- Day 2 schedule -->
-          </div>
         </div>
-      </div>
     </section>
 
-
-    <!-- Testimonials slider -->
-    <section class="bg-secondary py-5">
-      <div class="container py-2 py-md-4 py-lg-5">
-        <h2 class="h1 text-center pb-3 pb-lg-0 mb-4 mb-lg-5">What Our Attendees Say</h2>
-        <div class="position-relative px-sm-5 mx-auto" style="max-width: 976px;">
-
-          <!-- Prev button -->
-          <button type="button" id="prev"
-            class="btn btn-prev btn-icon btn-sm position-absolute top-50 translate-middle-y start-0 d-none d-sm-inline-flex mt-n4">
-            <i class="bx bx-chevron-left"></i>
-          </button>
-
-          <!-- Next button -->
-          <button type="button" id="next"
-            class="btn btn-next btn-icon btn-sm position-absolute top-50 translate-middle-y end-0 d-none d-sm-inline-flex mt-n4">
-            <i class="bx bx-chevron-right"></i>
-          </button>
-
-          <!-- Slider -->
-          <div class="swiper swiper-nav-onhover pt-1 mx-md-2" data-swiper-options='{
-              "spaceBetween": 12,
-              "loop": true,
-              "pagination": {
-                "el": ".swiper-pagination",
-                "clickable": true
-              },
-              "navigation": {
-                "prevEl": "#prev",
-                "nextEl": "#next"
-              }
-            }'>
-            <div class="swiper-wrapper pt-4 pb-3">
-
-              <!-- Item -->
-              <div class="swiper-slide h-auto px-2">
-                <figure class="card h-100 position-relative border-0 shadow-sm py-3 p-0 p-xxl-4 my-0">
-                  <span
-                    class="btn btn-icon btn-primary btn-lg shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4 ms-xxl-5">
-                    <i class="bx bxs-quote-left"></i>
-                  </span>
-                  <blockquote class="card-body mt-2 mb-2">
-                    <p class="fs-lg mb-0">The event was spectacular! The speakers were inspiring, and the networking
-                      opportunities were invaluable. Can't wait for
-                      the next edition.
-                      .</p>
-                  </blockquote>
-                  <figcaption class="card-footer d-flex align-items-center border-0 pt-0 mt-n2 mt-lg-0">
-                    <div class="ps-3">
-                      <h6 class="fw-semibold lh-base mb-0">Chituh Innoncentia</h6>
-                      <span class="fs-sm text-muted">Student Developer</span>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <!-- Item -->
-              <div class="swiper-slide h-auto px-2">
-                <figure class="card h-100 position-relative border-0 shadow-sm py-3 p-0 p-xxl-4 my-0">
-                  <span
-                    class="btn btn-icon btn-primary btn-lg shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4 ms-xxl-5">
-                    <i class="bx bxs-quote-left"></i>
-                  </span>
-                  <blockquote class="card-body mt-2 mb-2">
-                    <p class="fs-lg mb-0">A great mix of knowledge, experience, and networking! Loved the sessions, and
-                      the atmosphere was so inclusive and
-                      engaging.</p>
-                  </blockquote>
-                  <figcaption class="card-footer d-flex align-items-center border-0 pt-0 mt-n2 mt-lg-0">
-                    <div class="ps-3">
-                      <h6 class="fw-semibold lh-base mb-0">Djeuga Kellia</h6>
-                      <span class="fs-sm text-muted">Student Developer</span>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-
-              <!-- Item -->
-              <div class="swiper-slide h-auto px-2">
-                <figure class="card h-100 position-relative border-0 shadow-sm py-3 p-0 p-xxl-4 my-0">
-                  <span
-                    class="btn btn-icon btn-primary btn-lg shadow-primary pe-none position-absolute top-0 start-0 translate-middle-y ms-4 ms-xxl-5">
-                    <i class="bx bxs-quote-left"></i>
-                  </span>
-                  <blockquote class="card-body mt-2 mb-2">
-                    <p class="fs-lg mb-0">This is a productive event for a start, the speakers shared lots of insights
-                      and they were very open to answer my questions and even after the event, they were still open to
-                      talk with me. I pray for such to happen often because we barely have events like this for
-                      beginners</p>
-                  </blockquote>
-                  <figcaption class="card-footer d-flex align-items-center border-0 pt-0 mt-n2 mt-lg-0">
-                    <div class="ps-3">
-                      <h6 class="fw-semibold lh-base mb-0">Wandji Christian</h6>
-                      <span class="fs-sm text-muted">Student UI/UX Designer</span>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-
-            <!-- Pagination -->
-            <div class="swiper-pagination position-relative pt-2 pt-sm-3 mt-4"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Location -->
-    <section class="container py-5">
-      <div class="row mt-lg-3 pt-1 pt-md-4 pt-lg-5">
-        <div class="col-xl-3 col-md-4 text-center text-md-start">
-          <h3 class="h4">Venue</h3>
-          <h2 class="h1 mb-4">Hotel Prince De Galles, Akwa</h2>
-          <div class="d-none d-md-block text-primary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="118" height="118" fill="none">
-              <g clip-path="url(#A)">
-                <path
-                  d="M116.912 76.527c-4.963-3.081-9.413-6.675-13.52-10.782-1.37-1.369-3.766-.343-3.766 1.54 0 1.54-.171 3.081-.171 4.621-14.89 2.739-29.78 3.936-45.013 4.108-12.836.342-30.123 1.712-41.761-4.45-8.9-4.792-10.269-15.917-6.504-24.475 1.54-3.594 4.279-6.504 7.702-8.557 3.936-2.396 7.873-1.027 11.981-2.054.513-.171.685-.856.342-1.369-6.333-6.675-17.457 1.027-21.565 6.504-5.819 7.702-6.161 18.998-1.027 27.042 7.531 11.981 25.501 11.125 37.653 11.467 19.169.685 39.365.171 58.192-4.108 0 1.712.171 3.252.685 4.963 0 .342.171.513.342.685-1.369 1.198-.171 4.279 2.225 3.765 4.963-1.027 9.927-2.568 14.548-4.792 1.198-1.026.856-3.251-.343-4.107zm-13.178-4.45c2.396 2.054 4.792 4.108 7.531 5.99-2.396 1.027-4.964 1.712-7.531 2.396v-.685c-.514-2.567-.342-5.135 0-7.702z"
-                  fill="currentColor" />
-              </g>
-              <defs>
-                <clipPath id="A">
-                  <path fill="#fff" d="M0 0h118v118H0z" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </div>
-        <div class="col-xl-9 col-md-8">
-          <img src="assets/img/landing/conference/prince.WEBP" class="rounded-3" width="952" alt="Venue">
-        </div>
-      </div>
-      <div class="row mb-lg-3 pb-1 pb-md-4 pb-lg-5 mt-4 mt-sm-n5">
-        <div class="col-lg-4 col-md-5 offset-md-6 offset-lg-7 mt-md-n5">
-          <div class="gallery mt-md-n4 mx-auto" style="max-width: 416px;">
-            <a href="https://maps.app.goo.gl/2WUkYwLC9CCw2fix6?g_st=ic" data-iframe="true"
-              class="gallery-item rounded-2" data-sub-html='<h6 class="fs-sm text-light">Hotel Prince De Galles</h6>'>
-              <img src="assets/img/landing/conference/map-light.jpg" class="d-dark-mode-none" alt="Map preview">
-              <img src="assets/img/landing/conference/map-dark.jpg" class="d-none d-dark-mode-block" alt="Map preview">
-              <div class="gallery-item-caption fs-sm fw-medium">Hotel Prince De Galles</div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Buy ticket CTA -->
-    <section class="bg-gradient-primary py-5">
-      <div class="container py-2 py-md-4 py-lg-5">
-        <div class="row py-xl-3">
-          <div class="col-xl-4 col-lg-5 offset-xl-1 order-lg-2 mb-4">
-            <h2 class="h1 text-light text-center text-sm-start pb-4 mb-0 mb-lg-3">Craft your Tech Career!</h2>
-            <div class="d-flex align-items-center">
-              <div class="bg-white rounded-circle text-primary flex-shrink-0 p-3">
-                <svg style="margin: 2px;" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M18.0225 2.91133C17.2397 2.91133 16.5038 3.21602 15.9507 3.76914C15.3132 4.40664 14.9616 5.25508 14.9616 6.15977V8.98633C14.9616 12.516 13.0772 15.6098 10.26 17.3207H14.2585C18.0225 17.3207 21.0882 14.2598 21.0882 10.491V5.97227C21.0882 4.28945 19.71 2.91133 18.0225 2.91133ZM18.7772 5.97695C18.3882 5.97695 18.0741 5.66289 18.0741 5.27383C18.0741 4.88477 18.3882 4.5707 18.7772 4.5707C19.1663 4.5707 19.4804 4.88477 19.4804 5.27383C19.4804 5.66289 19.1663 5.97695 18.7772 5.97695ZM23.7929 1.71133C23.5163 1.43477 23.071 1.43477 22.7991 1.71133L21.4257 3.08477C20.6054 2.11914 19.3819 1.50977 18.0225 1.50977C16.8647 1.50977 15.7772 1.95977 14.9569 2.78008L0.20535 17.527C0.00378752 17.7285 -0.05715 18.0285 0.0506625 18.291C0.158475 18.5535 0.416288 18.727 0.702225 18.727H5.22097H9.4491L11.8069 21.0848H11.2444C10.8553 21.0848 10.5413 21.3988 10.5413 21.7879C10.5413 22.177 10.8553 22.491 11.2444 22.491H15.7632C16.1522 22.491 16.4663 22.177 16.4663 21.7879C16.4663 21.3988 16.1522 21.0848 15.7632 21.0848H13.7944L11.4366 18.727H14.2585C18.8007 18.727 22.4944 15.0332 22.4944 10.491V5.97227C22.4944 5.39102 22.3819 4.8332 22.1757 4.31758L23.7929 2.70039C24.0694 2.4332 24.0694 1.98789 23.7929 1.71133ZM2.3991 17.3207L13.5554 6.16445V8.98633C13.5554 13.5801 9.81472 17.3207 5.22097 17.3207H2.3991ZM21.0882 10.4957C21.0882 14.2598 18.0272 17.3254 14.2585 17.3254H10.26C13.0772 15.6145 14.9616 12.516 14.9616 8.98633V6.15977C14.9616 5.25508 15.3132 4.40664 15.9507 3.76914C16.5038 3.21602 17.2397 2.91133 18.0225 2.91133C19.71 2.91133 21.0882 4.28477 21.0882 5.97695V10.4957Z"
-                    fill="currentColor" />
-                </svg>
-              </div>
-              <p class="fs-xl text-light ps-3 mb-0">Hurry up! Early birds extended until November 23rd, 2024.</p>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-7 order-lg-1">
-
-            <!-- Ticket card -->
-            <div class="ignore-dark-mode position-relative">
-              <div class="position-relative overflow-hidden rounded-3 zindex-5 py-5 px-4 p-sm-5">
-                <span class="position-absolute top-0 start-0 w-100 h-100 bg-repeat-0 bg-position-center-start zindex-2"
-                  style="background-image: url(assets/img/landing/conference/price-card-left-bg.png);"></span>
-                <span class="position-absolute top-0 end-0 w-100 h-100 bg-repeat-0 bg-position-center-end zindex-2"
-                  style="background-image: url(assets/img/landing/conference/price-card-right-bg.png);"></span>
-                <div class="px-md-4 position-relative zindex-5">
-                  <div class="d-sm-flex align-items-start justify-content-between">
-                    <div class="text-center text-sm-start me-sm-4">
-                      <div class="lead text-primary fw-semibold text-uppercase mb-2">Nov 23</div>
-                      <h3 class="h1">CodeConnect Conference</h3>
-                    </div>
-                    <div class="d-table bg-white rounded-3 p-4 flex-shrink-0 mx-auto mx-sm-0">
-                      <img src="assets/img/landing/conference/bit.ly_m_codinghq.png" width="142" alt="QR Code">
-                    </div>
-                  </div>
-                  <div class="d-flex flex-column flex-sm-row align-items-center pt-4 mt-2">
-                    <a href="https://bit.ly/codeconnect2"
-                      class="btn btn-primary shadow-primary btn-lg mb-3 mb-sm-0 me-sm-3">Register Now</a>
-                    <div class="d-flex align-items-center">
-                      <span class="h4 text-body mb-0">FOR FREE</span>
-                    </div>
-                  </div>
+    <!-- SAVE YOUR SEAT (tickets) -->
+    <section id="tickets" class="pt-0">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-lg-8">
+                    <h2 class="hero-title">Save your seat</h2>
+                    <p class="section-lead">Registration is free but required. Choose your pass and we’ll send updates
+                        as we confirm speakers and exhibitors.</p>
                 </div>
-              </div>
-              <span class="position-absolute bg-dark opacity-35 bottom-0 mb-n2 d-dark-mode-none"
-                style="left: 1.5rem; width: calc(100% - 3rem); height: 5rem; filter: blur(.75rem);"></span>
             </div>
-          </div>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0 fw-bold">General Admission</h5>
+                            <span class="badge rounded-pill agenda-badge">Free</span>
+                        </div>
+                        <ul class="mb-4">
+                            <li>Full day access to all keynotes and panels</li>
+                            <li>Exhibition floor & networking</li>
+                            <li>Digital swag & session recordings</li>
+                        </ul>
+                        <a href="hhttps://forms.gle/1Eaf5r8NTrxAQrWv9" class="btn btn-cta w-100" target="_blank"
+                            rel="noopener">Register now</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4 h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="mb-0 fw-bold">Virtual Pass</h5>
+                            <span class="badge rounded-pill agenda-badge">Free</span>
+                        </div>
+                        <ul class="mb-4">
+                            <li>Livestream of the main stage</li>
+                            <li>Access to session recordings</li>
+                            <li>Access to community Slack/Discord</li>
+                        </ul>
+                        <a href="https://forms.gle/1Eaf5r8NTrxAQrWv9" class="btn btn-outline-light w-100" target="_blank"
+                            rel="noopener">Get virtual access</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
-  </main>
 
+    <!-- SPEAKERS -->
+    <section id="speakers">
+        <div class="container">
+            <div class="row mb-4 align-items-end">
+                <div class="col-lg-8">
+                    <h2 class="hero-title">Get a sneak peek of the speakers</h2>
+                    <p class="section-lead">We’re confirming more names each week. Here’s a first look (placeholders –
+                        replace with confirmed speakers and photos).</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <!-- Speaker card template -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/cheif.jpg"
+                                alt="HRM Chief Dr Robert Esuka Endeley" />
+                            <!-- <a href="https://www.linkedin.com/in/ayuketta/recent-activity/all/" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a> -->
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">HRM Chief Dr Robert Esuka Endeley</h5>
+                            <p class="speaker-role">The Paramount Chief of Buea</p>
+                            <p class="speaker-bio">
+                                A Cyber Security specialist with over a decade of experience investing in startups in Cameroon and enabling African innovation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/Etta.jpg"
+                                alt="Ayuk Etta" />
+                            <a href="https://www.linkedin.com/in/ayuketta/recent-activity/all/" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">Ayuk Etta</h5>
+                            <p class="speaker-role">CEO / Mountain Hub</p>
+                            <p class="speaker-bio">
+                                He is a technology and sustainability entrepreneur with over a decade of experience building startups and enabling African innovation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/Bine.jpeg"
+                                alt="Bine MOUKOURI" />
+                            <a href="https://www.linkedin.com/in/bine-moukouri/" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">Bine MOUKOURI</h5>
+                            <p class="speaker-role">Creative Consultant / JUJUMAKE</p>
+                            <p class="speaker-bio">Multidisciplinary creative with 13+ years of experience across design, tech, film, strategy, and creative operations — all rooted in a passion for storytelling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/Akwo.jpg"
+                                alt="Akwo Ashangndowah" />
+                            <a href="https://www.linkedin.com/in/akwo-ashangndowah-2070bba5/" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">Akwo Ashangndowah</h5>
+                            <p class="speaker-role">Co-Founder & CEO / Nkwa App</p>
+                            <p class="speaker-bio">His passion for innovation and his ability to think outside the box has helped him lead Nkwa to become one of the most promising startups in French Africa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/patrick.jpeg"
+                                alt="Patrick Timani" />
+                            <a href="#" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">Patrick Timani</h5>
+                            <p class="speaker-role">Co-Founder / Bee</p>
+                            <p class="speaker-bio">Startup founder bringing innovative solutions to market challenges.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/churchill.jpg"
+                                alt="Mambe Churchill Nanje" />
+                            <a href="https://www.linkedin.com/in/mambe-churchill-nanje-0962535/" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">Mambe Churchill</h5>
+                            <p class="speaker-role">Co-founder / Buyam</p>
+                            <p class="speaker-bio">He is a visionary software engineer with over 18 years of experience building and scaling technology ventures in Africa. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/yembe.jpg"
+                                alt="Yembe Nfor " />
+                            <a href="https://www.linkedin.com/in/nforyembe/" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">Yembe Nfor </h5>
+                            <p class="speaker-role">Co-founder / Yems Group</p>
+                            <p class="speaker-bio">
+                                Management and Tech Consultant partnering with purpose-driven organisations on their journey to sustainable SCALE by harnessing strategic operational excellence . </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/claudine.jpeg"
+                                alt="Ngangmi Claudine" />
+                            <a href="https://www.linkedin.com/in/ngangmi-claudine-mba-195085147/" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">Ngangmi Claudine</h5>
+                            <p class="speaker-role">Team Lead Corporate Communications / UBA Bank</p>
+                            <p class="speaker-bio">
+                                An experienced marketing and communications professional with a proven track record in designing and implementing communication strategies and marketing campaigns that deliver results. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="speaker-card">
+                        <div class="speaker-image-wrapper">
+                            <img class="speaker-image"
+                                src="assets/speakers/Miriam.jpeg"
+                                alt="Miriam TCHAMI" />
+                            <a href="https://www.linkedin.com/in/miriam-t-03b60238/" class="speaker-linkedin" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                        <div class="speaker-info">
+                            <h5 class="speaker-name">Miriam TCHAMI</h5>
+                            <p class="speaker-role">Customer Relationship Manager</p>
+                            <p class="speaker-bio">
+                                Experte en relation client doté d'un solide bagage technique, spécialisé dans le customer onboarding pour les entreprises fournissant des solutions digitales. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Footer -->
-  <footer class="footer dark-mode bg-dark pt-5 pb-4 pb-lg-5">
-    <div class="container text-center pt-lg-3">
-      <div class="navbar-brand justify-content-center text-dark mb-2 mb-lg-4">
-        <span class="fs-4">CodeConnect</span>
-      </div>
-      <ul class="nav justify-content-center pt-3 pb-4 pb-lg-5">
-        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#speakers" class="nav-link">Speakers</a></li>
-        <li class="nav-item"><a href="#schedule" class="nav-link">Schedule</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
-        <li class="nav-item"><a href="feedback.php" class="nav-link">FeedBack</a></li>
-        <li class="nav-item"><a href="powerpoint.html" class="nav-link">Presentions</a></li>
-      </ul>
-      <div class="d-flex flex-column flex-sm-row justify-content-center">
-        <a href="https://bit.ly/codeconnect2" class="btn btn-primary shadow-primary btn-lg me-sm-4 mb-3">Register Now
-        </a>
-        <a target="_blank"
-          href="https://www.google.com/calendar/render?action=TEMPLATE&text=CodeConnect&dates=20241123T090000Z/20241123T160000Z&details=Beyond the code&location=Hotel Prince De Galles"
-          class="btn btn-outline-light btn-lg mb-3">
-          <i class="bx bx-calendar-check fs-xl me-2 ms-n1"></i>
-          Add to calendar
-        </a>
-      </div>
-      <!-- <div class="d-flex justify-content-center pt-4 mt-lg-3">
-        <a href="#" class="btn btn-icon btn-secondary btn-facebook mx-2">
-          <i class="bx bxl-facebook"></i>
-        </a>
-        <a href="#" class="btn btn-icon btn-secondary btn-instagram mx-2">
-          <i class="bx bxl-instagram"></i>
-        </a>
-        <a href="#" class="btn btn-icon btn-secondary btn-twitter mx-2">
-          <i class="bx bxl-twitter"></i>
-        </a>
-       <a href="#" class="btn btn-icon btn-secondary btn-youtube mx-2">
-          <i class="bx bxl-youtube"></i>
-        </a>
-      </div> -->
-      <p class="nav d-block fs-sm text-center pt-5 mt-lg-4 mb-0">
-        <span class="text-light opacity-50">&copy; All rights reserved. Made by </span>
-        <a class="nav-link d-inline-block p-0" href="https://coding-hq.com/" target="_blank" rel="noopener">CodingHQ</a>
-      </p>
-    </div>
-  </footer>
+            <style>
+                .speaker-card {
+                    background: rgba(255, 255, 255, 0.03);
+                    border: 1px solid rgba(255, 255, 255, 0.08);
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    transition: all 0.3s ease;
+                }
 
+                .speaker-card:hover {
+                    transform: translateY(-5px);
+                    border-color: rgba(255, 255, 255, 0.2);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                }
 
-  <!-- Back to top button -->
-  <a href="#top" class="btn-scroll-top" data-scroll>
-    <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
-    <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
-  </a>
+                .speaker-image-wrapper {
+                    position: relative;
+                    padding-top: 100%;
+                    background: linear-gradient(45deg, var(--cc-blue-dark), var(--cc-blue));
+                }
 
+                .speaker-image {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: all 0.3s ease;
+                }
 
-  <!-- Vendor Scripts -->
-  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
-  <script src="assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
-  <script src="assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
-  <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+                .speaker-card:hover .speaker-image {
+                    transform: scale(1.05);
+                }
 
-  <!-- Main Theme Script -->
-  <script src="assets/js/theme.min.js"></script>
+                .speaker-linkedin {
+                    position: absolute;
+                    bottom: 1rem;
+                    right: 1rem;
+                    background: var(--cc-orange);
+                    color: white;
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    opacity: 0;
+                    transform: translateY(10px);
+                    transition: all 0.3s ease;
+                }
+
+                .speaker-card:hover .speaker-linkedin {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                .speaker-linkedin:hover {
+                    background: var(--cc-orange-light);
+                    color: white;
+                }
+
+                .speaker-info {
+                    padding: 1.5rem;
+                }
+
+                .speaker-name {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    margin: 0;
+                    color: var(--cc-blue-light);
+                }
+
+                .speaker-role {
+                    color: var(--cc-orange-light);
+                    font-size: 0.9rem;
+                    margin: 0.5rem 0;
+                }
+
+                .speaker-bio {
+                    color: var(--cc-muted);
+                    font-size: 0.9rem;
+                    margin: 0;
+                    line-height: 1.5;
+                }
+
+                @media (max-width: 768px) {
+                    .speaker-info {
+                        padding: 1rem;
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <!-- AGENDA -->
+   <!-- AGENDA -->
+            <section id="agenda" class="position-relative">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-lg-8">
+                            <h2 class="hero-title">Agenda</h2>
+                            <p class="section-lead">A full day of insights, connections, and opportunities. Each session
+                                is crafted to deliver maximum value.</p>
+                        </div>
+                    </div>
+
+                    <div class="agenda-timeline">
+                        <!-- Morning Sessions -->
+                        <div class="agenda-section mb-5">
+                            <h5 class="text-cc-orange-light mb-4">Morning Sessions</h5>
+                            <div class="agenda-items">
+                                <div class="agenda-item" data-aos="fade-up">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">08:30</span>
+                                            <span class="agenda-duration">1h</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type registration">
+                                                <span class="badge agenda-badge">Registration</span>
+                                            </div>
+                                            <h6 class="agenda-title">Check‑in & coffee</h6>
+                                            <p class="agenda-description mb-0">Exhibition floor opens</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="agenda-item" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">09:30</span>
+                                            <span class="agenda-duration">30m</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type opening">
+                                                <span class="badge agenda-badge">Opening</span>
+                                            </div>
+                                            <h6 class="agenda-title">Welcome remarks</h6>
+                                            <p class="agenda-description mb-0">Conference briefing & day overview</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="agenda-item featured" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">10:00</span>
+                                            <span class="agenda-duration">1h</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type keynote">
+                                                <span class="badge agenda-badge">Keynote</span>
+                                            </div>
+                                            <h6 class="agenda-title">Building resilient products for Africa's next
+                                                decade</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="agenda-item" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">11:00</span>
+                                            <span class="agenda-duration">1h</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type panel">
+                                                <span class="badge agenda-badge">Panel</span>
+                                            </div>
+                                            <h6 class="agenda-title">Launch, Learn & Scale</h6>
+                                            <p class="agenda-description mb-0">Real playbooks from Cameroon's builders
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="agenda-item" data-aos="fade-up" data-aos-delay="400">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">12:00</span>
+                                            <span class="agenda-duration">1h</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type panel">
+                                                <span class="badge agenda-badge">Panel</span>
+                                            </div>
+                                            <h6 class="agenda-title">Investir dans les startups africaines</h6>
+                                            <p class="agenda-description mb-0">Opportunités & défis</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Break -->
+                        <div class="agenda-break my-5" data-aos="fade-up">
+                            <div class="agenda-item-content">
+                                <div class="agenda-time-block">
+                                    <span class="agenda-time">13:00</span>
+                                    <span class="agenda-duration">1.5h</span>
+                                </div>
+                                <div class="agenda-details">
+                                    <div class="agenda-type break">
+                                        <span class="badge agenda-badge">Break</span>
+                                    </div>
+                                    <h6 class="agenda-title">Lunch & Networking</h6>
+                                    <p class="agenda-description mb-0">Exhibition floor tours available</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Afternoon Sessions -->
+                        <div class="agenda-section">
+                            <h5 class="text-cc-orange-light mb-4">Afternoon Sessions</h5>
+                            <div class="agenda-items">
+                                <div class="agenda-item" data-aos="fade-up">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">14:30</span>
+                                            <span class="agenda-duration">1h</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type panel">
+                                                <span class="badge agenda-badge">Panel</span>
+                                            </div>
+                                            <h6 class="agenda-title">Talent, Innovation & Collaboration</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="agenda-item featured" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">15:30</span>
+                                            <span class="agenda-duration">1h</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type keynote">
+                                                <span class="badge agenda-badge">Keynote</span>
+                                            </div>
+                                            <h6 class="agenda-title">Shipping from Cameroon</h6>
+                                            <p class="agenda-description mb-0">Lessons in velocity, quality & impact</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="agenda-item" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">16:30</span>
+                                            <span class="agenda-duration">1h</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type showcase">
+                                                <span class="badge agenda-badge">Showcase</span>
+                                            </div>
+                                            <h6 class="agenda-title">Startup & Product Demos</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="agenda-item" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="agenda-item-content">
+                                        <div class="agenda-time-block">
+                                            <span class="agenda-time">17:30</span>
+                                            <span class="agenda-duration">1h</span>
+                                        </div>
+                                        <div class="agenda-details">
+                                            <div class="agenda-type networking">
+                                                <span class="badge agenda-badge">Networking</span>
+                                            </div>
+                                            <h6 class="agenda-title">Connect & Collaborate</h6>
+                                            <p class="agenda-description mb-0">Meet recruiters, partners & peers</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .agenda-timeline {
+                        position: relative;
+                    }
+
+                    .agenda-section:not(:last-child)::after {
+                        
+                        position: absolute;
+                        left: 85px;
+                        width: 2px;
+                        height: calc(100% - 40px);
+                        background: linear-gradient(180deg, var(--cc-orange-light) 0%, var(--cc-blue-light) 100%);
+                        opacity: 0.2;
+                    }
+
+                    .agenda-item {
+                        position: relative;
+                        padding: 1.5rem;
+                        margin-bottom: 1rem;
+                        border-radius: 1rem;
+                        background: rgba(255, 255, 255, 0.03);
+                        transition: all 0.3s ease;
+                    }
+
+                    .agenda-item:hover {
+                        background: rgba(255, 255, 255, 0.06);
+                        transform: translateX(5px);
+                    }
+
+                    .agenda-item.featured {
+                        background: linear-gradient(90deg, rgba(244, 106, 31, 0.1), rgba(39, 111, 191, 0.1));
+                        border: 1px solid rgba(244, 106, 31, 0.2);
+                    }
+
+                    .agenda-item-content {
+                        display: flex;
+                        gap: 2rem;
+                    }
+
+                    .agenda-time-block {
+                        min-width: 100px;
+                        text-align: center;
+                    }
+
+                    .agenda-time {
+                        display: block;
+                        font-size: 1.25rem;
+                        font-weight: 800;
+                        color: var(--cc-blue-light);
+                    }
+
+                    .agenda-duration {
+                        display: block;
+                        font-size: 0.85rem;
+                        color: var(--cc-muted);
+                    }
+
+                    .agenda-details {
+                        flex: 1;
+                    }
+
+                    .agenda-type {
+                        margin-bottom: 0.5rem;
+                    }
+
+                    .agenda-title {
+                        margin: 0;
+                        font-weight: 600;
+                    }
+
+                    .agenda-description {
+                        color: var(--cc-muted);
+                        font-size: 0.9rem;
+                    }
+
+                    .agenda-break {
+                        padding: 2rem;
+                        background: linear-gradient(90deg, rgba(39, 111, 191, 0.1), transparent);
+                        border-radius: 1rem;
+                        margin: 2rem 0;
+                    }
+
+                    @media (max-width: 768px) {
+                        .agenda-item-content {
+                            flex-direction: column;
+                            gap: 1rem;
+                        }
+
+                        .agenda-time-block {
+                            text-align: left;
+                        }
+
+                        .agenda-section::after {
+                            left: 25px;
+                        }
+                    }
+                </style>
+            </section>
+
+    <!-- EXHIBITION -->
+    <section id="exhibition" class="position-relative">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8">
+                    <h2 class="hero-title">Showcasing Innovation</h2>
+                    <p class="section-lead">The exhibition floor is where ideas meet opportunity. Early-stage founders and innovators get to showcase their work, receive valuable feedback, and connect with potential investors and partners.</p>
+                </div>
+            </div>
+
+            <!-- Why Exhibit Cards -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <div class="why-exhibit-card">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-5">
+                                <div class="exhibit-image-wrapper">
+                                    <img src="assets/recap-img/exhibit3.jpeg" 
+                                         alt="Visibility" 
+                                         class="img-fluid rounded-start">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Maximum Visibility</h5>
+                                    <p class="card-text">Showcase your product to 200+ tech leaders, investors, and potential users in one high-impact day.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="why-exhibit-card">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-5">
+                                <div class="exhibit-image-wrapper">
+                                    <img src="assets/recap-img/exhibit1.jpg" 
+                                         alt="Feedback" 
+                                         class="img-fluid rounded-start">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Direct Feedback</h5>
+                                    <p class="card-text">Get real-time insights from experienced builders and your target audience to refine your product.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="why-exhibit-card">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-5">
+                                <div class="exhibit-image-wrapper">
+                                    <img src="assets/recap-img/exhibit2.jpg" 
+                                         alt="Connections" 
+                                         class="img-fluid rounded-start">
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold">Key Connections</h5>
+                                    <p class="card-text">Connect with investors, potential partners, and fellow founders in meaningful conversations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exhibitor Grid -->
+            <!-- <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="text-cc-orange-light mb-4">Featured Exhibitors</h3>
+                    <div class="row g-4">
+                        Exhibitor Cards
+                        <div class="col-md-4 col-lg-3">
+                            <div class="exhibitor-card">
+                                <div class="logo-placeholder">
+                                    <span>TBD</span>
+                                </div>
+                                <h6 class="exhibitor-name">Startup Name</h6>
+                                <p class="exhibitor-desc">Brief description of the startup and what they're building.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-lg-3">
+                            <div class="exhibitor-card">
+                                <div class="logo-placeholder">
+                                    <span>TBD</span>
+                                </div>
+                                <h6 class="exhibitor-name">Startup Name</h6>
+                                <p class="exhibitor-desc">Brief description of the startup and what they're building.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-lg-3">
+                            <div class="exhibitor-card">
+                                <div class="logo-placeholder">
+                                    <span>TBD</span>
+                                </div>
+                                <h6 class="exhibitor-name">Startup Name</h6>
+                                <p class="exhibitor-desc">Brief description of the startup and what they're building.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-lg-3">
+                            <div class="exhibitor-card">
+                                <div class="logo-placeholder">
+                                    <span>TBD</span>
+                                </div>
+                                <h6 class="exhibitor-name">Startup Name</h6>
+                                <p class="exhibitor-desc">Brief description of the startup and what they're building.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- CTA -->
+            <div class="text-center">
+                <a href="https://forms.gle/Fu73tB6uk7Ef7FzB7" class="btn btn-cta btn-lg">Register to Exhibit</a>
+            </div>
+        </div>
+
+        <style>
+            .why-exhibit-card {
+                background: rgba(255, 255, 255, 0.03);
+                border-radius: 1rem;
+                overflow: hidden;
+                height: 100%;
+                transition: transform 0.3s ease;
+            }
+
+            .why-exhibit-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .exhibit-image-wrapper {
+                height: 200px;
+                overflow: hidden;
+            }
+
+            .exhibit-image-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .why-exhibit-card .card-body {
+                padding: 1.5rem;
+            }
+
+            .why-exhibit-card .card-title {
+                color: var(--cc-blue-light);
+                margin-bottom: 0.75rem;
+            }
+
+            .why-exhibit-card .card-text {
+                color: var(--cc-muted);
+                font-size: 0.9rem;
+                margin-bottom: 0;
+            }
+
+            .exhibitor-card {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                border-radius: 1rem;
+                padding: 1.5rem;
+                height: 100%;
+                transition: all 0.3s ease;
+            }
+
+            .exhibitor-card:hover {
+                border-color: rgba(255, 255, 255, 0.2);
+                transform: translateY(-5px);
+            }
+
+            .logo-placeholder {
+                background: linear-gradient(45deg, rgba(39, 111, 191, 0.1), rgba(244, 106, 31, 0.1));
+                border-radius: 0.75rem;
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1rem;
+            }
+
+            .logo-placeholder span {
+                color: var(--cc-muted);
+                font-weight: 600;
+            }
+
+            .exhibitor-name {
+                margin: 0.75rem 0;
+                font-weight: 600;
+            }
+
+            .exhibitor-desc {
+                color: var(--cc-muted);
+                font-size: 0.9rem;
+                margin-bottom: 0;
+            }
+        </style>
+    </section>
+
+    <!-- GALLERY: tabs photos/video -->
+    <section id="gallery">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-lg-8">
+                    <h2 class="section-title">From classroom beginnings to Krystal Palace</h2>
+                    <p class="section-lead">Browse moments from previous editions and watch the recap. Switch between
+                        photos and video.</p>
+                </div>
+            </div>
+            <ul class="nav nav-pills mb-4" id="galleryTabs" role="tablist">
+                <li class="nav-item me-2" role="presentation">
+                    <button class="nav-link active" id="photos-tab" data-bs-toggle="pill" data-bs-target="#photos"
+                        type="button" role="tab" aria-controls="photos" aria-selected="true">Photos</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="video-tab" data-bs-toggle="pill" data-bs-target="#video" type="button"
+                        role="tab" aria-controls="video" aria-selected="false">Video</button>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="photos" role="tabpanel" aria-labelledby="photos-tab">
+                    <div class="row g-3">
+                        <div class="col-6 col-md-4"><img class="img-fluid rounded"
+                                src="assets/recap-img/1.jpg"
+                                alt="Event photo" /></div>
+                        <div class="col-6 col-md-4"><img class="img-fluid rounded"
+                                src="assets/recap-img/2.jpg"
+                                alt="Event photo" /></div>
+                        <div class="col-6 col-md-4"><img class="img-fluid rounded"
+                                src="assets/recap-img/6.jpg"
+                                alt="Event photo" /></div>
+                        <div class="col-6 col-md-4"><img class="img-fluid rounded"
+                                src="assets/recap-img/4.jpg"
+                                alt="Event photo" /></div>
+                        <div class="col-6 col-md-4"><img class="img-fluid rounded"
+                                src="assets/recap-img/3.jpg"
+                                alt="Event photo" /></div>
+                        <div class="col-6 col-md-4"><img class="img-fluid rounded"
+                                src="assets/recap-img/5.jpg"
+                                alt="Event photo" /></div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube-nocookie.com/embed/IegMYXsNsxg?si=L9br9Q_DedauLRKv" title="CodeConnect Recap"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPONSORS -->
+        <!-- SPONSORS -->
+    <section id="sponsors" class="position-relative">
+        <div class="container">
+            <div class="row mb-5 align-items-end">
+                <div class="col-lg-8">
+                    <h2 class="hero-title">Our Sponsors</h2>
+                    <p class="section-lead">Partnering with visionary companies to build Cameroon's tech ecosystem. 
+                        Want to support the next generation of builders? <a href="#contact" class="text-cc-orange-light hover-underline">Get in touch</a>.</p>
+                </div>
+            </div>
+
+            <!-- Platinum Sponsors -->
+            <!-- <div class="sponsor-section mb-5">
+                <div class="sponsor-tier-header">
+                    <span class="sponsor-tier-badge platinum">
+                        <i class="bi bi-star-fill me-2"></i>Platinum
+                    </span>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <a href="#" class="sponsor-card platinum" target="_blank" rel="noopener">
+                            <div class="sponsor-card-content">
+                                <div class="sponsor-logo">
+                                    <span>Your Logo Here</span>
+                                </div>
+                                <div class="sponsor-info">
+                                    <h5 class="sponsor-name">Company Name</h5>
+                                    <p class="sponsor-description">Brief description of the company and their impact in the tech ecosystem.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" class="sponsor-card platinum" target="_blank" rel="noopener">
+                            <div class="sponsor-card-content">
+                                <div class="sponsor-logo">
+                                    <span>Available</span>
+                                </div>
+                                <div class="sponsor-info">
+                                    <h5 class="sponsor-name">Your Company</h5>
+                                    <p class="sponsor-description">Join us as a Platinum sponsor and showcase your commitment to innovation.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Gold Sponsors -->
+            <!-- <div class="sponsor-section mb-5">
+                <div class="sponsor-tier-header">
+                    <span class="sponsor-tier-badge gold">
+                        <i class="bi bi-trophy-fill me-2"></i>Gold
+                    </span>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <a href="#" class="sponsor-card gold" target="_blank" rel="noopener">
+                            <div class="sponsor-card-content">
+                                <div class="sponsor-logo">
+                                    <span>Available</span>
+                                </div>
+                                <div class="sponsor-info">
+                                    <h5 class="sponsor-name">Your Company</h5>
+                                    <p class="sponsor-description">Support the next wave of African innovation.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="sponsor-card gold" target="_blank" rel="noopener">
+                            <div class="sponsor-card-content">
+                                <div class="sponsor-logo">
+                                    <span>Available</span>
+                                </div>
+                                <div class="sponsor-info">
+                                    <h5 class="sponsor-name">Your Company</h5>
+                                    <p class="sponsor-description">Connect with Cameroon's top tech talent.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="sponsor-card gold" target="_blank" rel="noopener">
+                            <div class="sponsor-card-content">
+                                <div class="sponsor-logo">
+                                    <span>Available</span>
+                                </div>
+                                <div class="sponsor-info">
+                                    <h5 class="sponsor-name">Your Company</h5>
+                                    <p class="sponsor-description">Shape the future of tech in Africa.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Community Sponsors -->
+            <!-- <div class="sponsor-section">
+                <div class="sponsor-tier-header">
+                    <span class="sponsor-tier-badge community">
+                        <i class="bi bi-people-fill me-2"></i>Community
+                    </span>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <a href="#" class="sponsor-card community" target="_blank" rel="noopener">
+                            <div class="sponsor-logo">
+                                <span>Available</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="sponsor-card community" target="_blank" rel="noopener">
+                            <div class="sponsor-logo">
+                                <span>Available</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="sponsor-card community" target="_blank" rel="noopener">
+                            <div class="sponsor-logo">
+                                <span>Available</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="#" class="sponsor-card community" target="_blank" rel="noopener">
+                            <div class="sponsor-logo">
+                                <span>Available</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <style>
+            .sponsor-section {
+                position: relative;
+            }
+
+            .sponsor-tier-header {
+                margin-bottom: 1.5rem;
+            }
+
+            .sponsor-tier-badge {
+                display: inline-flex;
+                align-items: center;
+                padding: 0.5rem 1rem;
+                border-radius: 999px;
+                font-weight: 700;
+                font-size: 0.9rem;
+                letter-spacing: 0.5px;
+            }
+
+            .sponsor-tier-badge.platinum {
+                background: linear-gradient(45deg, #e5e4e2, #C0C0C0);
+                color: #2a2a2a;
+            }
+
+            .sponsor-tier-badge.gold {
+                background: linear-gradient(45deg, #FFD700, #FDB931);
+                color: #2a2a2a;
+            }
+
+            .sponsor-tier-badge.community {
+                background: linear-gradient(45deg, var(--cc-blue), var(--cc-blue-light));
+                color: white;
+            }
+
+            .sponsor-card {
+                display: block;
+                text-decoration: none;
+                border-radius: 1rem;
+                overflow: hidden;
+                transition: all 0.3s ease;
+                height: 100%;
+            }
+
+            .sponsor-card.platinum {
+                background: linear-gradient(45deg, rgba(229, 228, 226, 0.1), rgba(192, 192, 192, 0.1));
+                border: 1px solid rgba(229, 228, 226, 0.2);
+            }
+
+            .sponsor-card.gold {
+                background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(253, 185, 49, 0.1));
+                border: 1px solid rgba(255, 215, 0, 0.2);
+            }
+
+            .sponsor-card.community {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .sponsor-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .sponsor-card-content {
+                padding: 1.5rem;
+            }
+
+            .sponsor-logo {
+                background: rgba(255, 255, 255, 0.95);
+                height: 120px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0.75rem;
+                margin-bottom: 1rem;
+            }
+
+            .sponsor-logo span {
+                color: #666;
+                font-weight: 600;
+            }
+
+            .sponsor-info {
+                color: #fff;
+            }
+
+            .sponsor-name {
+                margin: 0 0 0.5rem;
+                font-weight: 600;
+            }
+
+            .sponsor-description {
+                color: var(--cc-muted);
+                font-size: 0.9rem;
+                margin: 0;
+            }
+
+            .hover-underline {
+                text-decoration: none;
+                background-image: linear-gradient(var(--cc-orange-light), var(--cc-orange-light));
+                background-position: 0 100%;
+                background-repeat: no-repeat;
+                background-size: 0 2px;
+                transition: background-size 0.3s;
+            }
+
+            .hover-underline:hover {
+                background-size: 100% 2px;
+            }
+
+            @media (max-width: 768px) {
+                .sponsor-card-content {
+                    padding: 1rem;
+                }
+
+                .sponsor-logo {
+                    height: 100px;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="rounded-3"><img class="img-fluid" style="width: 200px;" src="assets/img/favicon.PNG" alt="CodeConnect 2025"></div>
+                        <div>
+                            <strong>CodeConnect 2025</strong><br />
+                            Krystal Palace, Douala — 29 Nov 2025
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a class="btn btn-cta me-2" href="https://forms.gle/1Eaf5r8NTrxAQrWv9" target="_blank"
+                        rel="noopener">Register</a>
+                    <a class="btn btn-outline-light" href="mailto:contact@coding-hq.com">Contact us</a>
+                </div>
+            </div>
+            <hr class="my-4" />
+            <div class="d-flex justify-content-between align-items-center">
+                <small  style="color: white;">© <span id="year"></span> CodeConnect. All rights reserved.</small>
+                <div class="d-flex gap-3 fs-5">
+                    <a class="text-light" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a class="text-light" href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a class="text-light" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
