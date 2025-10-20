@@ -8,6 +8,40 @@
     <meta name="description"
         content="CodeConnect 2025 – Engineering Cameroon's Digital Future. November 29, 2025 at Krystal Palace, Douala. Join developers, founders, investors, and policy leaders for keynotes, panels, exhibitions, and networking." />
 
+    <!-- SEO: indexing & canonical -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://codeconnect.coding-hq.com" />
+
+    <!-- Theming & author -->
+    <meta name="theme-color" content="#276FBF" />
+    <meta name="author" content="Codinghq" />
+
+    <!-- Open Graph (Facebook/LinkedIn/Slack) -->
+    <meta property="og:title" content="CodeConnect 2025 – Engineering Cameroon's Digital Future" />
+    <meta property="og:description" content="Join 200+ builders on Nov 29, 2025 at Krystal Palace, Douala for keynotes, panels, exhibitions, and networking." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://codeconnect.coding-hq.com/" />
+    <!-- Prefer a 1200x630 image for best link previews -->
+    <meta property="og:image" content="https://codeconnect.coding-hq.com/assets/recap-img/1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CodeConnect 2025 at Krystal Palace, Douala on Nov 29, 2025" />
+    <meta property="og:site_name" content="CodeConnect" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CodeConnect 2025 – Engineering Cameroon's Digital Future" />
+    <meta name="twitter:description" content="Nov 29, 2025 • Krystal Palace, Douala. Keynotes, panels, exhibitions, and networking." />
+    <!-- Use the same image as Open Graph -->
+    <meta name="twitter:image" content="https://codeconnect.coding-hq.com/assets/recap-img/1.jpg" />
+
+    <!-- SEO: keywords (supplemental) -->
+    <meta name="keywords" content="CodeConnect, Cameroon tech, tech conference, Douala event, developers, startups, investors, Krystal Palace, 2025 conference, codinghq" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon.PNG" />
+
     <!-- Bootstrap 5 CSS (CDN) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
@@ -18,6 +52,46 @@
         rel="stylesheet" />
     <link rel="shortcut icon" href="assets/img/favicon.PNG" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- Structured Data: Event (enhances search visibility) -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "CodeConnect 2025 – Engineering Cameroon's Digital Future",
+            "description": "CodeConnect 2025 brings together developers, founders, investors, and policymakers for keynotes, panels, exhibitions, and networking.",
+            "startDate": "2025-11-29T09:30:00+01:00",
+            "endDate": "2025-11-29T18:30:00+01:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "isAccessibleForFree": true,
+                    "image": [
+                    "https://codeconnect.coding-hq.com/assets/recap-img/1.jpg"
+                ],
+            "location": {
+                "@type": "Place",
+                "name": "Krystal Palace",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Douala",
+                    "addressCountry": "CM"
+                }
+            },
+                    "organizer": {
+                        "@type": "Organization",
+                        "name": "Codinghq",
+                        "url": "https://codeconnect.coding-hq.com"
+                    },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "XAF",
+                "availability": "https://schema.org/InStock",
+            "url": "https://codeconnect.coding-hq.com/codeconnect-2025"
+            },
+            "url": "https://codeconnect.coding-hq.com/codeconnect-2025"
+        }
+        </script>
 </head>
 
 <body>
@@ -39,7 +113,7 @@
                     <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
                     <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#sponsors">Sponsors</a></li>
-                    <li class="nav-item ms-lg-2"><a class="btn btn-cta" href="https://forms.gle/1Eaf5r8NTrxAQrWv9"
+                    <li class="nav-item ms-lg-2"><a class="btn btn-cta" href="https://forms.gle/your-google-form"
                             target="_blank" rel="noopener">Register</a></li>
                 </ul>
             </div>
@@ -1135,7 +1209,7 @@
                 <div class="col-lg-8">
                     <h2 class="hero-title">Our Sponsors</h2>
                     <p class="section-lead">Partnering with visionary companies to build Cameroon's tech ecosystem. 
-                        Want to support the next generation of builders? <a href="#contact" class="text-cc-orange-light hover-underline">Get in touch</a>.</p>
+                        Want to support the next generation of builders? <a href="https://forms.gle/9Azpd19Rh65W8QUJA" class="text-cc-orange-light hover-underline">Get in touch</a>.</p>
                 </div>
             </div>
 
@@ -1177,52 +1251,84 @@
             </div> -->
 
             <!-- Gold Sponsors -->
-            <!-- <div class="sponsor-section mb-5">
-                <div class="sponsor-tier-header">
+             <div class="sponsor-section mb-5">
+                <!-- <div class="sponsor-tier-header">
                     <span class="sponsor-tier-badge gold">
                         <i class="bi bi-trophy-fill me-2"></i>Gold
                     </span>
-                </div>
+                </div> -->
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <a href="#" class="sponsor-card gold" target="_blank" rel="noopener">
+                        <a href="https://www.krystalpalacedouala.com/" class="sponsor-card gold" target="_blank" rel="noopener">
                             <div class="sponsor-card-content">
                                 <div class="sponsor-logo">
-                                    <span>Available</span>
+                                    <span><img class="img-fluid" style="width: 180px;" src="assets/sponsors/krystal.png" alt="krystal Palace"></span>
                                 </div>
                                 <div class="sponsor-info">
-                                    <h5 class="sponsor-name">Your Company</h5>
-                                    <p class="sponsor-description">Support the next wave of African innovation.</p>
+                                    <h5 class="sponsor-name">Krystal Palace</h5>
+                                    <p class="sponsor-description">Krystal Palace & Resorts est un groupe composé de deux enseignes dont chacune compte un hôtel.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="sponsor-card gold" target="_blank" rel="noopener">
+                        <a href="https://www.coding-hq.com" class="sponsor-card gold" target="_blank" rel="noopener">
                             <div class="sponsor-card-content">
                                 <div class="sponsor-logo">
-                                    <span>Available</span>
+                                    <span><img class="img-fluid" style="width: 180px;" src="assets/sponsors/codinghq.png" alt="krystal Palace"></span>
                                 </div>
                                 <div class="sponsor-info">
-                                    <h5 class="sponsor-name">Your Company</h5>
-                                    <p class="sponsor-description">Connect with Cameroon's top tech talent.</p>
+                                    <h5 class="sponsor-name">CodingHQ</h5>
+                                    <p class="sponsor-description">
+                                        CodingHQ est une plateforme dédiée à l'apprentissage du développement et de la technologie.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="sponsor-card gold" target="_blank" rel="noopener">
+                        <a href="https://aecoedu.com/" class="sponsor-card gold" target="_blank" rel="noopener">
                             <div class="sponsor-card-content">
                                 <div class="sponsor-logo">
-                                    <span>Available</span>
+                                    <span><img class="img-fluid" style="width: 180px;" src="assets/sponsors/aeco.png" alt="krystal Palace"></span>
                                 </div>
                                 <div class="sponsor-info">
-                                    <h5 class="sponsor-name">Your Company</h5>
-                                    <p class="sponsor-description">Shape the future of tech in Africa.</p>
+                                    <h5 class="sponsor-name">AECO Education</h5>
+                                    <p class="sponsor-description">
+                                        AECO Edu is your one-stop guide on the path to educational fulfillment.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
+                    <div class="col-md-4">
+                        <a href="#" class="sponsor-card gold" rel="noopener">
+                            <div class="sponsor-card-content">
+                                <div class="sponsor-logo">
+                                    <span><img class="img-fluid" style="width: 180px;" src="assets/sponsors/logo-sesa-new.png" alt="krystal Palace"></span>
+                                </div>
+                                <div class="sponsor-info">
+                                    <h5 class="sponsor-name">SESA TECH</h5>
+                                    <p class="sponsor-description">
+                                        Providing first class technology solutions.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#" class="sponsor-card gold" rel="noopener">
+                            <div class="sponsor-card-content">
+                                <div class="sponsor-logo">
+                                    <span><img class="img-fluid" style="width: 180px;" src="assets/sponsors/gitwit.png" alt="krystal Palace"></span>
+                                </div>
+                                <div class="sponsor-info">
+                                    <h5 class="sponsor-name">GitWit</h5>
+                                    <p class="sponsor-description">
+                                        Providing first class technology solutions.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                   
                 </div>
             </div> -->
 
