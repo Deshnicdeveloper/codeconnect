@@ -17,7 +17,9 @@
         <header class="hero">
             <div class="hero-content">
                 <div class="logo-section">
-                    <img src="assets/logo.PNG" alt="CodeConnect 2025 Logo" class="main-logo">
+                    < a href="../">
+                        <img src="assets/logo.PNG" alt="CodeConnect 2025 Logo" class="main-logo">
+                    </a>
                 </div>
 
                 <h1 class="hero-title">Create Your "I'll Be There" Badge</h1>
