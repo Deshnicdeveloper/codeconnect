@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Inspector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        #template {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            cursor: crosshair;
+        }
+        .info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+        .coords {
+            font-weight: bold;
+            color: #1E90FF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Template Position Finder</h1>
+        <p>Click on the template to find coordinates for positioning elements.</p>
+        <img id="template" src="template.png" alt="Template">
+        <div class="info">
+            <p>Template Size: <span class="coords" id="size"></span></p>
+            <p>Click Position: <span class="coords" id="coords">Click on the image</span></p>
+            <p>Instructions:</p>
+            <ul>
+                <li>Click the center of where the photo should go</li>
+                <li>Click where the name text should start</li>
+                <li>Click where the role text should start</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const img = document.getElementById('template');
+        const sizeSpan = document.getElementById('size');
+        const coordsSpan = document.getElementById('coords');
+        
+        img.onload = function() {
+            sizeSpan.textContent = `${img.naturalWidth} x ${img.naturalHeight} px`;
+        };
+        
+        img.onclick = function(e) {
+            const rect = img.getBoundingClientRect();
+            const scaleX = img.naturalWidth / rect.width;
+            const scaleY = img.naturalHeight / rect.height;
+            const x = Math.round((e.clientX - rect.left) * scaleX);
+            const y = Math.round((e.clientY - rect.top) * scaleY);
+            coordsSpan.textContent = `X: ${x}, Y: ${y}`;
+            console.log(`Position: x=${x}, y=${y}`);
+        };
+    </script>
+</body>
+</html>
