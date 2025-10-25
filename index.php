@@ -139,7 +139,7 @@
                         <a class="btn btn-cta btn-lg" href="https://forms.gle/1Eaf5r8NTrxAQrWv9" target="_blank"
                             rel="noopener">Save your seat</a>
                         <a class="btn btn-outline-light btn-lg" href="#agenda">See agenda</a>
-                        <a class="btn btn-outline-light btn-lg" href="iwillbethere/index.php">I will be there</a>
+                        <a class="btn btn-outline-light btn-lg" href="/iwillbethere">I will be there</a>
                     </div>
                 </div>
                 <div class="col-lg-5">
