@@ -17,7 +17,7 @@
         <header class="hero">
             <div class="hero-content">
                 <div class="logo-section">
-                    < a href="../">
+                    <a href="../">
                         <img src="assets/logo.PNG" alt="CodeConnect 2025 Logo" class="main-logo">
                     </a>
                 </div>
