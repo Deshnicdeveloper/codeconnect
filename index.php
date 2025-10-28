@@ -1301,7 +1301,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="sponsor-card gold" rel="noopener">
+                        <a href="https://sesa-tech.com/" class="sponsor-card gold" rel="noopener">
                             <div class="sponsor-card-content">
                                 <div class="sponsor-logo">
                                     <span><img class="img-fluid" style="width: 180px;" src="assets/sponsors/logo-sesa-new.png" alt="krystal Palace"></span>
@@ -1309,13 +1309,13 @@
                                 <div class="sponsor-info">
                                     <h5 class="sponsor-name">SESA TECH</h5>
                                     <p class="sponsor-description">
-                                        Providing first class technology solutions.</p>
+                                        SESA-Tech vous accompagne dans votre transformation numérique avec des solutions sur mesure, conçues par des experts en Afrique.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="sponsor-card gold" rel="noopener">
+                        <a href="https://www.gitwit.dev/" class="sponsor-card gold" rel="noopener">
                             <div class="sponsor-card-content">
                                 <div class="sponsor-logo">
                                     <span><img class="img-fluid" style="width: 180px;" src="assets/sponsors/gitwit.png" alt="krystal Palace"></span>
@@ -1323,7 +1323,7 @@
                                 <div class="sponsor-info">
                                     <h5 class="sponsor-name">GitWit</h5>
                                     <p class="sponsor-description">
-                                        Providing first class technology solutions.</p>
+                                        Gitwit is an open-source, AI-powered IDE right in the browser, enabling developers to write code, use AI for intelligent suggestions, and deploy applications instantly.</p>
                                 </div>
                             </div>
                         </a>
