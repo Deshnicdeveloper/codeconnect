@@ -176,11 +176,21 @@ photoInput.addEventListener('click', () => {
     photoInput.value = '';
 });
 
-// Simple, direct download - with tainted canvas workaround
+// Download button with backend save functionality
 downloadBtn.addEventListener('click', function(e) {
     e.preventDefault();
     console.log('Download clicked');
     console.log('Canvas dimensions:', canvas.width, 'x', canvas.height);
+    
+    // Get user data
+    const name = nameInput.value.trim();
+    const role = roleInput.value.trim();
+    
+    // Validate fields
+    if (!name || !role || !uploadedPhoto) {
+        alert('Please fill in all required fields and upload a photo.');
+        return;
+    }
     
     try {
         // For tainted canvas (when loading template from file://), use toBlob
@@ -195,17 +205,22 @@ downloadBtn.addEventListener('click', function(e) {
                 // Create download link from blob
                 const url = URL.createObjectURL(blob);
                 const link = document.createElement('a');
-                link.download = 'codeconnect-2025-badge.png';
+                const filename = `codeconnect-2025-${name.toLowerCase().replace(/\s+/g, '-')}-badge.png`;
+                link.download = filename;
                 link.href = url;
                 
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
                 
+                // Save badge to backend
+                saveBadgeToBackend(blob, name, role).catch(err => {
+                    console.error('Failed to save badge to server:', err);
+                });
+                
                 // Clean up the blob URL
                 setTimeout(() => URL.revokeObjectURL(url), 100);
                 
-                console.log('Download triggered successfully via Blob');
             }, 'image/png');
         } else {
             // Fallback for older browsers
@@ -216,6 +231,52 @@ downloadBtn.addEventListener('click', function(e) {
         alert('Download failed: ' + error.message + '\n\nPlease try opening this page on http://localhost:8000 instead of directly from file://');
     }
 });
+
+// Function to save badge to backend
+async function saveBadgeToBackend(blob, name, role) {
+    try {
+        // Convert blob to base64
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        
+        reader.onloadend = async function() {
+            try {
+                const base64data = reader.result;
+                
+                // Prepare form data
+                const formData = new FormData();
+                formData.append('name', name);
+                formData.append('role', role);
+                formData.append('language', selectedLanguage);
+                formData.append('badge', base64data);
+                
+                // Send to backend
+                const response = await fetch('api/save_badge.php', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const responseText = await response.text();
+                const result = JSON.parse(responseText);
+                
+                if (result.success) {
+                    console.log('✅ Badge saved successfully:', result.data);
+                } else {
+                    console.error('❌ Failed to save badge:', result.message);
+                }
+            } catch (error) {
+                console.error('Error saving badge to server:', error);
+            }
+        };
+        
+        reader.onerror = function(error) {
+            console.error('Error reading blob:', error);
+        };
+        
+    } catch (error) {
+        console.error('Error saving badge to backend:', error);
+    }
+}
 
 // Share button - opens modal (only if share button exists)
 if (shareBtn && shareModal) {
