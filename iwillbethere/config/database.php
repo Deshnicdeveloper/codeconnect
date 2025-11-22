@@ -8,8 +8,8 @@
 // Database configuration
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'iwillbethere');
-define('DB_USER', 'root');        // Default XAMPP MySQL username
-define('DB_PASS', '');            // Default XAMPP MySQL password (empty)
+define('DB_USER', 'fast5003_deshnic');        // Default XAMPP MySQL username
+define('DB_PASS', '@Zz738Ra+OI3');            // Default XAMPP MySQL password (empty)
 define('DB_CHARSET', 'utf8mb4');
 
 /**
